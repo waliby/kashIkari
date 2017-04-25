@@ -1,0 +1,7 @@
+# File for each files excluded
+# Useful ling for this file: https://git-scm.com/docs/gitignore
+
+*.sass-cache
+*.vscode
+*.idea
+*.DS_Store

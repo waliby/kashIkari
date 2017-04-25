@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "start": "electron ./app",
+    "package": "asar pack shareFriend-win32-x64/resources/app shareFriend-win32-x64/resources/app.asar",
+    "build": "electron-packager ./app \"KashiKari\" --platform=win32 --arch=x64 --version=1.2.2 --icon=icon.ico --ignore=node_modules/electron-* --overwrite",
+    "clean": "rm -rf ./dist",
+    "clean:osx": "rm -rf ./dist/osx",
+    "clean:win": "rm -rf ./dist/win",
+    "clean:package": "rimraf ./dist/*",
+    "clean:winPS": "Remove-Item \".\\dist\\win\" -Recurse -Force",
+    "buildAll": "npm run clean && npm run build:osx && npm run build:win",
+    "build:osx": "npm run clean:package && electron-packager ./app \"KashiKari\" --out=dist/osx --platform=darwin --arch=x64 --version=1.2.2 --icon=assets/osx/icon.icns",
+    "build:win": "npm run clean:package && electron-packager ./app \"KashiKari\" --out=dist/win --platform=win32 --arch=x64 --version=1.2.2 --icon=assets/win/icon.ico",
+    "build:winOnWin": "electron-packager ./app \"KashiKari\" --out=dist/win --platform=win32 --arch=x64 --version=1.2.2 --icon=assets/win/icon.ico",
+
+    "pack": "npm run pack:osx && npm run pack:win",
+    "pack:osx": "npm run build:osx && electron-builder \"dist/osx/KashiKari-darwin-x64/KashiKari.app\" --platform=osx --out=\"dist/osx\" --config=package_builder.json",
+    "pack:win": "npm run build:win && electron-builder \"dist/win/KashiKari-win32-x64\" --platform=win --out=\"dist/win\" --config=package_builder.json"
+  },
+    "devDependencies": {
+  }
+}

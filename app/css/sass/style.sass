@@ -1,0 +1,863 @@
+@import "compass/reset"
+@import "compass/css3"
+
++font-face("opensansSemibold", font-files("opensans_regular_macroman/OpenSans-Regular-webfont.woff", "opensans_regular_macroman/OpenSans-Regular-webfont.ttf", "opensans_regular_macroman/OpenSans-Regular-webfont.svg#webfont"), 'opensans_regular_macroman/OpenSans-Regular-webfont.eot')
++font-face("RobotoLight", font-files("roboto_light_macroman/Roboto-Light-webfont.woff", "roboto_light_macroman/Roboto-Light-webfont.ttf", "roboto_light_macroman/Roboto-Light-webfont.svg#webfont"), 'opensans_regular_macroman/Roboto-Light-webfont.eot')
+//+font-face("Candal", font-files("Candal.ttf"))
+
+$colorMenu: #CCC
+// #35d628
+$colorTop: #2a579a
+$colorCorp: #FFF
+$colorBlack: #333
+$colorMenuRight: #EEE
+$btnHoverFocus: #5D008D
+$btnHover: lighten($colorTop, 10%)
+$btnHoverLight: lighten($colorTop, 14%)
+$btnGreen: rgb(88, 184, 54)
+
+
++keyframes(menuLeftHide)
+  from
+    left: 0px
+  to
+    left: -180px
+
++keyframes(menuLeftShow)
+  from
+    left: -180px
+  to
+    left: 0px
+
++keyframes(btnMenuShow)
+  from
+    margin-left: -50px
+  to
+    margin-left: 0px
+
++keyframes(btnMenuHide)
+  from
+    margin-left: 0px
+  to
+    margin-left: -50px
+
++keyframes(fondCache)
+  from
+    +background-image(linear-gradient(left , #eee, transparent))
+  to
+    +background-image(linear-gradient(left , #000, transparent))
+
++keyframes(warningPret)
+  from
+    background-color: #FFF
+    text-shadow: none
+  to
+    background-color: #E53935
+    text-shadow: 0px 0px 8px #FFF
+
++keyframes(warningPretBorder)
+  from
+    box-shadow: none
+  to
+    box-shadow: 0px 0px 8px red
+
+html, body
+  height: 100%
+  width: 100%
+  padding: 0px
+  margin: 0px
+  overflow: hidden
+  min-width: 500px
+  color: red
+
+
+body
+  background-color: rgb(0, 3, 87)
+  color: #000
+  font-family: 'opensansSemibold'
+  font-size: 14px
+
+.spanHackHeight
+  display: inline-block
+  height: 100%
+  width: 1px
+
+*
+  box-sizing: border-box
+
+a
+  text-decoration: none
+  color: #333
+
+a, input, textarea
+  outline: none
+
+input, a, img, button, textarea
+  outline: none !important
+  font-family: 'opensansSemibold'
+
+$heightBarTop: 50px
+.barTop
+  position: fixed
+  top: 0px
+  left: 0px
+  right: 0px
+  z-index: 1000
+  background-color: $colorTop
+  line-height: $heightBarTop
+  height: $heightBarTop
+  text-align: center
+  +user-select(none)
+  +box-shadow(0px 2px 8px #333)
+  > *
+    display: inline-block
+    height: 100%
+    vertical-align: top
+    background-color: $colorTop
+  *
+    color: white
+
+  //display: flex
+  //+flex-wrap(nowrap)
+  //+flex-direction(row)
+  //+justify-content(space-between)
+  //justify-content:flex-start
+  #ctnLeftBarTop
+    float: left
+    font-size: 0px
+
+    > *
+      vertical-align: top
+      padding: 0px
+      margin: 0px
+      font-size: 14px
+
+  a#btnShowMenu
+    width: 50px
+    height: 100%
+    display: inline-block
+    background-color: $btnHover
+    text-align: center
+    margin-left: 0
+    background-image: url('../img/amburger_white.png')
+    background-repeat: no-repeat
+    background-size: 30px
+    background-position: 10px
+    &:hover
+      background-color: $colorMenu
+      background-image: url('../img/amburger.png')
+
+  a#title
+    width: 150px
+    display: inline-block
+    text-align: center
+    font-family: RobotoLight
+    &:hover
+      background-color: $btnHoverLight
+      color: white
+  > #ctnSearchBar
+    // Place au centre verticalement
+    +align-self(center)
+    line-height: 34px
+    padding: 7px 0px
+    width: 220px
+    *
+      color: $colorBlack
+
+    div
+      background-color: #FFF
+      position: relative
+
+    input
+      display: block
+      height: 100%
+      width: 220px
+      //box-shadow: 0px 0px 8px #5D008D inset
+      padding: 10px 8px
+      border: 0px
+    span
+      cursor: default
+      position: absolute
+      top: 0px
+      right: 0px
+      bottom: 0px
+      background-color: #CCC
+      padding: 0px 20px
+      background: url("../img/loupe_bleu_1.jpg") no-repeat center center
+      background-size: 30px
+      &:hover
+        //+box-shadow(0px 0px 6px #CCC)
+
+    > #ctnDataSearch
+      overflow-x: hidden
+      overflow-y: auto
+      max-height: 300px
+      box-shadow: 0px 4px 8px rgb(73, 73, 73)
+
+      > div
+        text-align: left
+        padding: 0px 10px
+
+        &[data-type]:hover
+          background-color: $btnHover
+          color: white
+          cursor: pointer
+
+        &.lineInfoSearch
+          background-color: rgb(201, 201, 201)
+          color: black
+          &:hover
+            background-color: #b1afaf
+            cursor: grab
+
+  > #btnParam
+    //position: absolute
+    //top: 0px
+    //right: 0px
+    position: relative
+    float: right
+    padding:
+      left: 20px
+      right: 20px
+
+    #listOptTop
+      display: none
+      position: absolute
+      top: $heightBarTop
+      right: 0px
+      width: 180px
+      background-color: $colorMenuRight
+      text-align: left
+      *
+        color: $colorBlack
+      +box-shadow(-3px 8px 8px rgb(131, 131, 131))
+      li
+        padding: 0px 15px
+
+        &:hover
+          background-color: $btnHover
+          color: white
+
+  > span#ctnBtnRightSearch > span
+    padding: 0px 10px
+    display: inline-block
+    height: 100%
+    padding:
+      left: 10px
+      right: 10px
+    font-size: 30px
+    &:hover
+      background-color: $btnHover
+      color: white
+      cursor: pointer
+
+
+  > #btnParam:hover > #listOptTop
+    display: block
+  #title
+    font-size: 28px
+
+.ctnCorp
+  height: 100%
+  width: 100%
+  position: relative
+  padding-top: $heightBarTop
+  background-color: orange
+
+.menuLeft
+  background-color: $colorMenu
+  position: absolute
+  top: $heightBarTop
+  left: -180px
+  bottom: 0px
+  overflow-x: hidden
+  overflow-y: auto
+  z-index: 2000
+  padding-bottom: 20px
+
+  div.btnType
+    text-align: center
+    margin-top: 10px
+    padding: 5px 10px
+    &:hover
+      cursor: pointer
+      color: #FFF
+      background-color: $btnHover
+
+  ul
+    width: 180px
+    /*padding:
+      top: 10px
+
+    li
+      @at-root a.btnType
+        display: block
+        //padding: 8px 15px
+        padding: 2px 5px 2px 5px
+        //border-left: 3px solid transparent
+        > .menu_img
+          height: 25px
+          width: 25px
+          border: 1px solid #333
+          background-size: cover
+          background-repeat: no-repeat
+        > span
+          display: inline-block
+          vertical-align: middle
+        > span:last-child
+
+          padding-left: 10px
+          overflow: hidden
+          word-break: break-all
+          white-space: nowrap
+          width: 140px
+        &:hover, &.focusedType
+          //border-left: 3px solid #A800FF
+          cursor: pointer
+          color: #FFF
+        &:hover
+          background-color: $btnHoverLight
+
+  .focusedType
+    cursor: pointer
+    color: #FFF
+    background-color: $btnHover !important
+
+  .btnHideMenu
+    text-align: right
+    +box-shadow(0px 0px 8px black)
+    padding: 4px
+    font-size: 30px
+    font-weight: bold
+    &:hover
+      color: white
+      background-color: $btnHover
+      cursor: pointer
+
+.corp
+  background-color: $colorCorp
+  overflow-x: auto
+  height: 100%
+  padding-top: 5px
+  position: relative
+
+$tempAnim: 0.5s
+.menuLeftHide
+  +animation-name(menuLeftHide)
+  +animation-duration($tempAnim)
+  //+animation-iteration-count(1)
+  +animation-fill-mode(forwards)
+
+.menuLeftShow
+  +animation-name(menuLeftShow)
+  +animation-duration($tempAnim)
+  //+animation-iteration-count(2)
+  +animation-fill-mode(forwards)
+  //+animation-direction(reverse)
+
+
+.showBtnMenu
+  +animation-name(btnMenuShow)
+  +animation-duration($tempAnim)
+  //+animation-iteration-count(1)
+  +animation-fill-mode(forwards)
+
+.hideBtnMenu
+  +animation-name(btnMenuHide)
+  +animation-duration($tempAnim)
+  //+animation-iteration-count(2)
+  +animation-fill-mode(forwards)
+
+#fondOver
+  display: none
+
+.flouCorp
+  display: block !important
+  position: fixed
+  z-index: 995
+  top: 0px
+  left: 0px
+  bottom: 0px
+  width: 100%
+  height: 100%
+  +background-image(linear-gradient(left , #000, transparent))
+  /*+animation-name(fondCache)
+  +animation-duration(1s)
+  //+animation-iteration-count(1)
+  +animation-fill-mode(forwards)
+
+.ctnPage
+  margin-top: 10px
+  margin-bottom: 30px
+  > [data-idMenu]
+    display: none
+
+// Centre
+.ctnPage
+  .ctnBtnSbtn
+    padding: 10px
+    text-align: center
+
+.ctnShare
+  position: relative
+  width: 80%
+  height: 100px
+  border: 1px solid #CCC
+  //background-color: #EEE
+  margin: auto
+  margin-top: 20px
+  display: table
+  border-collapse: collapse
+
+  &:hover
+    +box-shadow(0px 0px 8px #333)
+  > div
+    display: table-cell
+    vertical-align: top
+  > div.ctnImgShare
+    display: inline-block
+    text-align: center
+    height: 100%
+    width: 100px
+    //position: relative
+    //left: 18px
+    //background-color: red
+    line-height: 100px
+    //+perspective(50px)
+    //+perspective-origin(70% 45%)
+    //+perspective(100px)
+    //+perspective-origin(70% 45%)
+    overflow: hidden
+    *
+      vertical-align: middle
+    > div
+      line-height: 90px
+      height: 90px
+      //position: relative
+      //top: 0px
+      //left: 6px
+      display: inline-block
+      //background-color: blue
+      //transform: rotatey(10deg)
+      //transform: rotatey(-25deg)
+      //box-shadow: 0px 0px 8px #333
+
+      > img
+        display: inline
+        vertical-align: middle
+        //border: 1px solid blue
+        max-width: 100px
+        max-height: 100px
+  &:hover div#ctnBtnPret
+    display: block
+
+  >div#ctnBtnPret
+    display: none
+    position: absolute
+    bottom: 0px
+    right: 0px
+
+    a
+      border: 0px
+      display: block
+      background-color: $colorTop
+      color: white
+      padding: 5px 15px
+      cursor: pointer
+      &:hover
+        background-color: $btnHover
+
+
+  > div.ctnRightShare
+    height: 100%
+    width: 100%
+    text-align: left
+    +box-shadow(-4px 0px 8px #CCC)
+    /*border:
+      top: 1px solid #CCC
+      bottom: 1px solid #CCC
+      right: 1px solid #CCC
+    background-color: #e7e7e7
+    //padding: 10px
+    > div.ctnTitreShare
+      //font-weight: bold
+      background-color: white
+      padding: 10px
+      width: 100%
+      box-shadow: 2px 2px 5px #CCC
+
+      > div.ctnDateRight
+        position: absolute
+        top: 2px
+        right: 10px
+        font-size: 12px
+        font-weight: normal
+        span:first-child
+          display: inline-block
+          width: 120px
+          text-align: right
+        span
+          padding: 2px 5px
+      > a
+        color: #2262EE
+        &:hover
+          text-decoration: underline
+
+    > div.ctnDescriShare
+      //overflow: auto
+      padding: 10px
+      width: 100%
+      height: 100%
+      font-size: 13px
+
+      ul.listInfoPret
+        margin-top: 10px
+        list-style-type: circle
+        margin-left: 30px
+        li
+          padding: 5px
+          span
+            &:first-child
+              display: inline-block
+              width: 150px
+
+            &:last-child
+              font-weight: bold
+
+.effetWarningPret
+  background-color: red !important
+  +animation-name(warningPret)
+  +animation-duration(2s)
+  +animation-iteration-count(infinite)
+  +animation-fill-mode(forwards)
+  +animation-direction(alternate)
+
+.effetWarningPretBorder
+  +animation-name(warningPretBorder)
+  +animation-duration(2s)
+  +animation-iteration-count(infinite)
+  +animation-fill-mode(forwards)
+  +animation-direction(alternate)
+
+
+.ctnGestion
+  display: none
+
+$colorBorder: grey
+$sizeBorder: 1px
+.ctnChoixAdd
+  padding:
+    top: 20px
+    bottom: 20px
+  text-align: center
+  > div
+    display: inline-block
+    border: $sizeBorder solid $colorBorder
+    border-left: 0px
+    padding: 0px
+    font-size: 0px
+    border-radius: 10px
+
+    span
+      font-size: 14px
+      display: inline-block
+      border-left: $sizeBorder solid $colorBorder
+      padding: 8px 15px
+      +background-image(linear-gradient(top, #eeeeee 0%, #cccccc 100%))
+      cursor: pointer
+      &:hover
+        +background-image(linear-gradient(top, #cccccc 0%, #eeeeee 100%))
+      &:first-child
+        border-top-left-radius: 10px
+        border-bottom-left-radius: 10px
+      &:last-child
+        border-top-right-radius: 10px
+        border-bottom-right-radius: 10px
+
+
+// Gestion de la page de gestion
+[data-value="gestion"]
+  //background-color: red
+  div.ctnLineForm, div.ctnBtnSbtn
+    padding: 10px
+    text-align: center
+    label
+      text-align: center !important
+    input
+      padding: 5px 10px
+      margin-left: 15px
+    > .ctnChoixPret
+      > label
+        &::after
+          content: ":"
+      > select, option
+        width: 150px
+
+      > select
+        margin-right: 10px
+
+      .input_nbr
+        width: 60px
+        padding: 10px
+    > .ctnChoixPret
+      div
+        padding: 5px 0px
+
+    > label
+      display: inline-block
+      width: 30%
+      text-align: right
+      &::after
+        content: ":"
+        margin-right: 20px
+
+    > input, select, option
+      padding: 10px
+      width: 40%
+
+    select
+      option
+        span
+          padding: 5px 10px
+
+    @at-root #nomAddTypeImg, .ctnModifImg
+      height: 100px
+      width: 60%
+      border: 2px dashed #333
+      background-color: rgb(202, 224, 244)
+      margin: auto
+      &.ctnModifImg
+        display: none
+        width: 100%
+      > span
+        display: inline-block
+        vertical-align: middle
+        > .ctnAffiNameImg
+          font-size: 14px
+          text-decoration: underline
+
+  @at-root div.ctnBtnSbtn
+    margin-top: 20px
+    input
+      width: 100px
+      cursor: pointer
+      font-size: 14px
+      font-family: Arial
+      &[type="submit"]
+        width: auto
+        background-color: $btnGreen
+        border: 0px
+        color: white
+        padding: 10px 35px
+        margin-left: 30px
+        &:hover
+          opacity: 0.6
+      &[type="reset"]
+        width: auto
+        background-color: orange
+        border: 0px
+        color: white
+        padding: 10px 35px
+        &:hover
+          opacity: 0.6
+.btnActifGestion
+  background-color: grey
+  background-image: none !important
+  color: white
+
+
+#lineNoPretInCat
+  margin:
+    top: 40px
+    bottom: 40px
+  text-align: center
+  font-weight: bold
+
+#btnAddPret
+  position: relative
+  font-size: 0px
+
+  &::after
+    margin-left: -20px
+    margin-top: -5px
+    display: inline-block
+    content: " "
+    height: 3px
+    width: 20px
+    vertical-align: middle
+    +transition(transform 0.5s linear)
+
+  &::before
+    margin-top: -5px
+    display: inline-block
+    content: " "
+    height: 3px
+    width: 20px
+    transform: rotate(90deg)
+    vertical-align: middle
+    +transition(transform 0.5s ease-in-out)
+
+  &::after, &::before
+    background-color: black
+    box-shadow: 0px 0px 18px #FFF
+
+  &:hover::after, &:hover::before
+    color: #FFF !important
+    background-color: white
+    box-shadow: none
+  /*&:hover::after, &:hover::before
+    background-color: #FFF !important
+    transform: rotate(180deg)
+
+/*.btnAddPretEffet
+  background-color: $btnHover
+  &::after, &::before
+    background-color: #FFF !important
+    transform: rotate(180deg) !important
+
+.btnAddPretEffet
+  background-color: $btnHover !important
+  &::after, &::before
+    background-color: #FFF !important
+    transform: rotate(180deg) !important
+    box-shadow: none !important
+
+.ctnAmis
+  display: none
+  .ctnListAmis
+    width: 80%
+    margin: auto
+    text-align: center
+    *
+      vertical-align: top
+    @at-root div.blockAmis
+      vertical-align: top
+      display: inline-block
+      margin: 8px
+      margin-bottom: 10px
+      text-align: left
+      border: 1px solid #CCC
+      +box-shadow(0px 0px 8px #CCC)
+      width: auto
+      @at-root div.ctnBtn
+        padding: 7px 10px
+        //padding-bottom: 0px
+        text-align: center
+        a
+          display: inline-block
+          border: 0px
+          background-color: $colorTop
+          color: white
+          padding: 4px 8px
+          cursor: pointer
+          &:first-child
+            margin-right: 10px
+          &:hover
+            background-color: $btnHover
+        &.ctnBtnSave
+          display: none
+      > div.ctnDataUser
+        padding: 5px 10px
+        span
+          display: inline-block
+          font-size: 12px
+          &:first-child
+            width: 80px
+
+          &:last-child
+            //width: 85px
+          input
+            //width: 95px
+            border: 1px solid $btnHover
+
+.lienValide
+  background-color: $btnGreen !important
+
+.ctnType, .ctnSearch
+  display: none
+
+
+.infoSection
+  margin: auto
+  background-color: $btnHover
+  color: #FFF
+  font-size: 20px
+  width: 80%
+  padding: 8px 10px
+  margin-bottom: 20px
+
+.ctnListType
+  width: 80%
+  margin: auto
+  text-align: center
+  @at-root .lineType
+    display: inline-block
+    margin: auto
+    border: 1px solid #EEE
+    margin-bottom: 20px
+    margin-left: 5px
+    margin-right: 5px
+    min-height: 80px
+    overflow: hidden
+    *
+      vertical-align: middle
+    .imgCoverType
+      display: block
+      width: 200px
+      height: 170px
+      background-color: #EEE
+      background-size: cover
+      background-image: url("../img/mind_brain_thinking.png")
+      +filter(blur(5px))
+      margin-bottom: 2px
+    .imgCoverTypePerso
+      +filter(blur(0px))
+
+    .ctnRightType
+      height: 100%
+      width: 100%
+      overflow: hidden
+      border-top: 1px solid #EEE
+
+      .titreType
+        padding: 8px
+      .ctnBtnType
+        padding: 10px
+        padding-top: 3px
+        a
+          display: inline-block
+          background-color: $colorTop
+          color: white
+          padding: 3px 10px
+          &:first-child
+            margin-right: 5px
+          &:hover
+            background-color: $btnHover
+
+.ctnListSearch
+  width: 80%
+  margin: auto
+  text-align: left
+  padding:
+    left: 5%
+    right: 5%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// OUTIL
+
+
+.lienNoDispo
+  border-left: 2px solid #ff9737
+  opacity: 0.6

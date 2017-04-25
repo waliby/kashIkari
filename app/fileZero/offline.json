@@ -1,0 +1,57 @@
+{
+  "type": {
+    "primaryKey": 4,
+    "value": [
+      {
+        "id": 1,
+        "nom": "dvd",
+        "img": "dvd.jpg",
+        "imgOrigin": "dvd.jpg"
+      },
+      {
+        "id": 2,
+        "nom": "cd",
+        "img": "dvd.jpg",
+        "imgOrigin": "dvd.jpg"
+      },
+      {
+        "id": 3,
+        "nom": "jeux",
+        "img": "manette.png",
+        "imgOrigin": "manette.png"
+      },
+      {
+        "id": 4,
+        "nom": "argent",
+        "img": "or.jpg",
+        "imgOrigin": "or.jpg"
+      }
+    ]
+  },
+  "pret": {
+    "primaryKey": 1,
+    "value": [
+      {
+        "id": 1,
+        "idType": 1,
+        "idAmis": 2,
+        "description": "",
+        "dateCreate": "",
+        "dateRecup": "08.01.2016",
+        "qte": 1,
+        "tabTypeInfo": ["info 1"]
+      }
+    ]
+  },
+  "amis": {
+    "primaryKey": 1,
+    "value": [
+      {
+        "id": 2,
+        "nom": "nomTest",
+        "prenom": "prenomTest",
+        "surnom": "Testeur"
+      }
+    ]
+  }
+}

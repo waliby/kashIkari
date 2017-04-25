@@ -1,0 +1,2230 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>appli</title></head><body><article class="markdown-body"><p>/<em> global TYPE_TYPE </em>/<br />
+/*<em><br />
+ * Created by waliby on 28.10.2015.<br />
+</em>/<br />
+var fs = null;<br />
+var remote, app, ncp, path, dialog;<br />
+try{<br />
+  fs = require(&lsquo;fs&rsquo;);<br />
+  remote = require(&lsquo;remote&rsquo;);<br />
+  app = remote.require(&lsquo;app&rsquo;);<br />
+  ncp = require(&lsquo;ncp&rsquo;).ncp;<br />
+  path = require(&lsquo;path&rsquo;);<br />
+  dialog = remote.require(&lsquo;dialog&rsquo;);<br />
+  //require(&lsquo;./function.js&rsquo;);§</p>
+<p>//BrowserWindow = remote.require(&lsquo;app&rsquo;);<br />
+}catch(e){<br />
+  console.warn(e);<br />
+}</p>
+<p>//console.info(dialog);</p>
+<p>if(fs){<br />
+  //const BrowserWindow = remote.BrowserWindow;<br />
+  /<em><br />
+  console.log(fs);<br />
+  console.log(process);<br />
+  console.log(app.getAppPath() + &ldquo;/../../&rdquo;);<br />
+  console.log(app.getName());<br />
+  console.log(app.getPath(&ldquo;appData&rdquo;));<br />
+  console.log(app.getPath(&ldquo;userData&rdquo;));<br />
+</em>/<br />
+  console.log(app.getAppPath());<br />
+  //remote.getCurrentWindow.appendFile(&ldquo;test.txt&rdquo;, &ldquo;salut \n&rdquo;);</p>
+<p>var pathApp = app.getAppPath(),<br />
+      pathFileZero = pathApp + &ldquo;/fileZero/&rdquo;,<br />
+      pathAppUser = pathApp + &ldquo;/../dataUser/&rdquo;,<br />
+      pathFileOffline = pathAppUser + &ldquo;offline.json&rdquo;,<br />
+      pathFileInline = pathAppUser + &ldquo;inline.json&rdquo;,<br />
+      pathImgUser = pathAppUser + &ldquo;imgUser/&rdquo;,<br />
+      pathNoImg = pathApp + &ldquo;/img/mind_brain_thinking.png&rdquo;;</p>
+<p>const TYPE_TYPE = &ldquo;type&rdquo;,<br />
+        TYPE_AMIS = &ldquo;amis&rdquo;,<br />
+        TYPE_PRET = &ldquo;pret&rdquo;;</p>
+<p>//console.info(pathAppUser);<br />
+  fs.readdir(pathAppUser, function(err, file){<br />
+    console.log(file)<br />
+  });<br />
+/<em><br />
+  fs.readFile(pathApp+&rdquo;/fileZero/offline.json&rdquo;, &lsquo;utf-8&rsquo;, function(err, data) {<br />
+    console.info(data);<br />
+  });<br />
+</em>/<br />
+//console.warn(fs.readFileSync(pathApp+&rdquo;/fileZero/offline.json&rdquo;, &lsquo;utf8&rsquo;));</p>
+<p>// Capture des infos sur un chemin(fichier ou dossier)</p>
+<p>fs.stat(pathAppUser, function(err, stats){<br />
+    console.info(err);<br />
+    //console.warn(stats.isDirectory());<br />
+    // Si une erreur survient ou si ce n&rsquo;est pas un dossier, on on entame le processus de creation.<br />
+    if(err || !stats.isDirectory()){<br />
+      // Copie du conteue du répertoire fileZero dans dataUser<br />
+      ncp(pathApp+&rdquo;/fileZero&rdquo;, pathAppUser, function(errDir){<br />
+        if(errDir){<br />
+          return console.error(errDir);<br />
+        }else{<br />
+          menu.reload();<br />
+          return console.info(&ldquo;Copie du répertoire réussit.&rdquo;);<br />
+        }<br />
+      });<br />
+    }else{<br />
+      menu.reload();<br />
+      //dialog.showErrorBox(&ldquo;Message d&rsquo;erreur&rdquo;, &ldquo;Le dossier "fileZero" n&rsquo;existe pas.&rdquo;);<br />
+    }<br />
+  });<br />
+}</p>
+<p>var menu = {<br />
+  &ldquo;reload&rdquo;: function(){<br />
+    /*<em><br />
+      Capture les données du fichier offline.<br />
+      Vérifie que le fichier existe.<br />
+      Crée une list html avec les bon types.<br />
+      Ajout de la liste dans le menu de gauche.<br />
+</em>/<br />
+    if(!fs)<br />
+      var fs = require(&lsquo;fs&rsquo;);</p>
+<pre><code>if(app.fileExist(pathFileOffline)){
+  fs.readFile(pathFileOffline, function(err, data){
+    var jsData = JSON.parse(data);
+
+    if (jsData.hasOwnProperty("type")) {
+      var tabType = jsData.type.value,
+          strOut = '';
+
+      for(var i=0; i&lt;tabType.length; i++){
+        var currType = tabType[i],
+            pathImg;
+        //console.warn(currType);
+        if(currType.img)
+          pathImg = '../dataUser/imgUser/' + currType.img;
+        else
+          pathImg = pathNoImg;
+
+        if(currType.nom)
+          strOut += '&lt;li&gt;'+
+                        '&lt;a href="#" class="btnType" data-idType="'+ currType.id +'"&gt;'+
+                          '&lt;span class="menu_img" style="background-image: url(\'' + pathImg +'\');"&gt;&lt;/span&gt;'+
+                          '&lt;span&gt;'+currType.nom+'&lt;/span&gt;'+
+                        '&lt;/a&gt;'+
+                      '&lt;/li&gt;';
+      }
+      $("#ulMenuLeft").html(strOut);
+      eventMenuLeft();
+    }
+  });
+}else
+  dialog.showErrorBox("Message d'erreur", "Fichier offline.json introuvable.");
+</code></pre>
+<p>}<br />
+};</p>
+<p>function actuList(typeData, idLiaison){<br />
+  /*<em><br />
+    &ndash; fonction servant a actualiser le contenu des 3 type d&rsquo;informations dans le programme.<br />
+    idLiaison: facultatif, permet d&rsquo;indiquer l&rsquo;id d&rsquo;un élément pour un critere de recherche,<br />
+                Principallement utilisé pour les pret, affiché que ceux lier a un type<br />
+</em>/</p>
+<p>fs.readFile(pathFileOffline, function(err, data){<br />
+    var jsData = JSON.parse(data);</p>
+<pre><code>if (jsData.hasOwnProperty(typeData)) {
+  var dataTab = jsData[typeData].value,
+      tabTypeAmis = jsData[TYPE_AMIS].value,
+      strOut = '';
+
+  // idLiaison -1 represente le bouton "tout", bouton qui doit afficher touts les prets.
+  if(idLiaison &amp;&amp; typeData == TYPE_PRET &amp;&amp; idLiaison &gt; -1){
+    var subTab = [];
+    for (var i = 0; i &lt; dataTab.length; i++)
+      if(dataTab[i].idType == idLiaison)
+        subTab.push(dataTab[i]);
+    // Ecrasement du tableau du type de data choisir par celui trier
+    dataTab = subTab;
+  }
+
+  if(dataTab.length == 0)
+    $(".ctnPret").html($("#lineNoPretInCat").clone());
+
+  // Supprime tous les blocs amis de l'affichage si on demande d'actualiser l'affichage.
+  // On ajoute ensuite les block 1 a 1 via append.
+  if(typeData == TYPE_AMIS)
+    $(".ctnListAmis").html("");
+  if(typeData == TYPE_TYPE)
+    $(".ctnListType").html("");
+
+  for(var i=0; i&lt;dataTab.length; i++){
+    switch (typeData) {
+      case TYPE_AMIS:
+          var currObj = dataTab[i],
+              ctnListAmis = '';
+
+          // Actualise la liste d'amis dans la partie gestion et les amis
+          // afficher dans la partie "liste amis"
+          if(currObj &amp;&amp; currObj.surnom){
+            strOut += `&lt;option value="` + currObj.id + `"&gt;
+                            ` + currObj.surnom + `:&amp;nbsp;&amp;nbsp;&amp;nbsp` + currObj.nom + " " + currObj.prenom + `
+                        &lt;/option&gt;`;
+
+
+            ctnListAmis += `&lt;div class="blockAmis"&gt;
+                              &lt;div class="ctnBtn" data-idAmis="` + currObj.id + `"&gt;
+                                &lt;a href="javascript:void(0);" name="button" class="btnUpdateAmis"&gt;Modifier&lt;/a&gt;
+                                &lt;a href="javascript:void(0);" name="button" class="btnDelAmis"&gt;Supprimer&lt;/a&gt;
+                              &lt;/div&gt;
+                              &lt;div class="ctnDataUser"&gt;
+                                &lt;span&gt;Nom:&lt;/span&gt;
+                                &lt;span class="spanValueAmis_nom"&gt;` + currObj.nom + `&lt;/span&gt;
+                              &lt;/div&gt;
+                              &lt;div class="ctnDataUser"&gt;
+                                &lt;span&gt;Prenom:&lt;/span&gt;
+                                &lt;span class="spanValueAmis_prenom"&gt;` + currObj.prenom + `&lt;/span&gt;
+                              &lt;/div&gt;
+                              &lt;div class="ctnDataUser"&gt;
+                                &lt;span&gt;Surnom:&lt;/span&gt;
+                                &lt;span class="spanValueAmis_surnom"&gt;` + currObj.surnom + `&lt;/span&gt;
+                              &lt;/div&gt;
+                              &lt;div class="ctnBtn ctnBtnSave" data-idAmis="` + currObj.id + `"&gt;
+                                &lt;a href="javascript:void(0);" name="button" class="btnValideUpdateAmis lienValide"&gt;Sauvegarder&lt;/a&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;`;
+          }
+
+          $(".listAmis").html(strOut); // Ajoute a chaque tout tous le conteneur d'options.
+          $(".ctnListAmis").append(ctnListAmis); // Ajoute a chaque tour de boucle un block d'amis
+        break;
+      case TYPE_TYPE:
+          var currObj = dataTab[i],
+              ctnListType = "";
+
+          if(currObj.nom)
+            strOut += '&lt;option value="'+ currObj.id +'"&gt;'+
+                            currObj.nom +
+                        '&lt;/option&gt;';
+
+            var pathImg = "";
+            if(currObj.img)
+              pathImg = 'background-image: url(\'../dataUser/imgUser/' + currObj.img + `'); `;
+
+            ctnListType = `&lt;div class="lineType"&gt;
+                            &lt;div class="imgCoverType`+(currObj.img? " imgCoverTypePerso" : "")+`" style="`+pathImg+`" &gt;
+
+                            &lt;/div&gt;
+                            &lt;div class="ctnRightType"&gt;
+                              &lt;div class="titreType"&gt;`+currObj.nom+`&lt;/div&gt;
+                              &lt;div class="ctnBtnType" data-idType="`+currObj.id+`"&gt;
+                                &lt;a href="#" class="btnUpdateType"&gt;Modifier&lt;/a&gt;
+                                &lt;a href="#" class="btnDelType"&gt;Supprimers&lt;/a&gt;
+                              &lt;/div&gt;
+                              &lt;div class="ctnBtn ctnBtnSave" data-idType="` + currObj.id + `"&gt;
+                                &lt;a href="javascript:void(0);" name="button" class="btnValideUpdateAmis lienValide"&gt;Sauvegarder&lt;/a&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;`;
+
+          $(".listPret").html(strOut);
+          $(".ctnListType").append(ctnListType); // Ajoute a chaque tour de boucle un block d'amis
+        break;
+      case TYPE_PRET:
+        /*
+          "id": 14,
+          "posType": "1",
+          "posAmis": "3",
+          "description": "Pret de dvd",
+          "dateCreate": "10.11.2015",
+          "dateRecup": "12.12.2015",
+          "qte": "2",
+          "tabTypeInfo": ["jimbo", "coleftif"]
+        */
+          var currObj = dataTab[i];
+          if(currObj.idType &gt;= 0 &amp;&amp; currObj.idAmis &gt;= 0){
+            //console.warn(currObj);
+            var affiAmis = "Amis surement supprimer.";
+            var tabObjAmis = file.getById(TYPE_AMIS, currObj.idAmis, tabTypeAmis);
+
+            if(tabObjAmis)
+              affiAmis = tabObjAmis.surnom;
+
+            strOut += `&lt;div class="ctnShare"&gt;
+                        &lt;div id="ctnBtnPret" data-idPret="`+currObj.id+`"&gt;
+                          &lt;a href="javascript:void(0);" class="btnDelPret"&gt;Supprimer&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="ctnImgShare"&gt;
+                            &lt;div&gt;
+                                &lt;img src="img/mind_brain_thinking.png" alt="" /&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="ctnRightShare"&gt;
+                            &lt;div class="ctnTitreShare"&gt;
+                                Partage de `+currObj.qte+` dvd a &lt;a href=""&gt;`+affiAmis+`&lt;/a&gt;
+                                &lt;span&gt;Prêter le `+currObj.dateCreate+`&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class="ctnDescriShare"&gt;`+currObj.description+`&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;`;
+
+          $(".ctnPret").html(strOut);
+        }
+        break;
+    }
+  }
+  if(typeData === TYPE_PRET)
+    eventListPret();
+}
+if(typeData === TYPE_AMIS)
+  eventListAmis();
+if(typeData === TYPE_TYPE)
+  eventListType();
+</code></pre>
+<p>});<br />
+}</p>
+<p>// Completition des listes déroulante.<br />
+actuList(TYPE_AMIS);<br />
+actuList(TYPE_TYPE);<br />
+actuList(TYPE_PRET);</p>
+<p>var app = {<br />
+  &ldquo;fileExist&rdquo;: function(pathFile){<br />
+    /*<em><br />
+      Vérifie que le fichier existe de magniere synchrome.<br />
+</em>/<br />
+    var stats = fs.statSync(pathFile);</p>
+<pre><code>if(stats.isFile()){
+  return true;
+}
+return false;
+</code></pre>
+<p>},<br />
+  &ldquo;isImg&rdquo;: function(pathImg){<br />
+    /*<em><br />
+      Vérifie que le chemin de l&rsquo;image est un chemin valid.<br />
+      Vérifie que l&rsquo;extension de l&rsquo;image est un type accepter.<br />
+</em>/<br />
+    console.warn(&ldquo;&ndash;&gt;&rdquo; + pathImg);<br />
+    if(pathImg &amp;&amp; /[\w\/.]{3,}/ig.exec(pathImg)){<br />
+      if(/[.png|.jpg|.gif]$/ig.exec(pathImg)){<br />
+          return true;<br />
+      }else<br />
+        dialog.showErrorBox(&ldquo;Message d&rsquo;erreur&rdquo;, &ldquo;Seul les formats d&rsquo;image suivant sont autorisé: [.png|.jpg|.gif]&rdquo;);<br />
+    }else<br />
+      console.info(&ldquo;Chemin de l&rsquo;image non valide ou vide.&rdquo;);<br />
+    return false;<br />
+  },<br />
+  &ldquo;addImg&rdquo; : function(lastInsertId, pathImg){<br />
+    var d = new Date(),<br />
+        imgValided = imgAdded = false;</p>
+<pre><code>// Découpe le chemin de l'image pour garder l'extension
+var tabPath = path.parse(pathImg);
+// Crée le chemin d'enregistrement de la copie de l'image avec le nom généré.
+var newImgPath = d.getTime() + tabPath.ext;
+
+// Copie de l'image
+ncp(pathImg, pathImgUser + newImgPath, function(err){
+  if(err){
+    return console.error(err);
+  }else{
+    console.log("Ajout de l'image réussit.");
+    pathImg = null;
+    // Ajout du chemin de l'image dans le fichier json
+    console.warn(newImgPath);
+    file.update(TYPE_TYPE, lastInsertId, {
+      "img": newImgPath
+    });
+  }
+});
+</code></pre>
+<p>}<br />
+};</p>
+<p>var file = {<br />
+  &ldquo;getLastId&rdquo;: function(typeData){<br />
+    var obj = this.getJson(pathFileOffline),<br />
+        lastIdInsered = null;</p>
+<pre><code>if(obj.hasOwnProperty(typeData))
+  lastIdInsered = obj[typeData].primaryKey;
+
+
+if(lastIdInsered &gt;=0)
+  //return tabType[tabType.length-1].id;
+        return lastIdInsered;
+else
+  return -1;
+</code></pre>
+<p>},<br />
+  &ldquo;getById&rdquo;: function(typeData, idElement, tabType){<br />
+    // Si le tableau n&rsquo;est pas renseigner, on le capture dans le fichier<br />
+    if(typeof tabType === &ldquo;undefined&rdquo;){<br />
+      var obj = this.getJson(pathFileOffline);</p>
+<pre><code>  if(obj.hasOwnProperty(typeData))
+    tabType = obj[typeData].value;
+}
+
+for (var i = 0; i &lt; tabType.length; i++) {
+  if(tabType[i].id == idElement)
+    return tabType[i];
+}
+
+return 0;
+</code></pre>
+<p>},<br />
+  &ldquo;isFileExist&rdquo;: function(pathFile, callback){<br />
+    /*<em><br />
+      Vérifie que le fichier existe, s&rsquo;il existe,<br />
+      on ajoute les nouvelles data avec addJson<br />
+</em>/<br />
+    //var self = this;<br />
+    if(!pathFile)<br />
+      return false;</p>
+<pre><code>fs.stat( pathFileOffline, function(err, stats){
+  console.info(err);
+  // Si une erreur survient ou si ce n'est pas un dossier, on on entame le processus de creation.
+  if(!err &amp;&amp; stats.isFile()){
+    //console.log(self);
+    callback();
+  }else{
+    dialog.showErrorBox("Message d'erreur", "Fichier offline.json introuvable.");
+    // Copie du fichier uniquement.
+    fs.createReadStream(pathFileOffline).pipe(fs.createWriteStream(pathFileOffline));
+  }
+});
+</code></pre>
+<p>},<br />
+  &ldquo;update&rdquo;: function(typeData, id, objData, callbackSuccess){<br />
+    /**<br />
+      Concue pour le moment que pour &ldquo;TYPE_TYPE&rdquo;</p>
+<pre><code>  Met a jour une information du fichier json en fonction
+  de l'id recu en parametre.
+
+  objData est un json contenant les infos a mettres a jour,
+    exemple: {"img": newImgPath}
+*/
+if(!id || typeof objData != "object")
+  return false;
+
+var obj = this.getJson(pathFileOffline),
+    tabType = obj[typeData].value;
+
+    console.info(tabType);
+    console.info(id);
+
+//if(tabType.length &lt; id)
+//  return false;
+
+// Capture l'élément correspondant a l'id recu.
+var type = null;
+for (var i = 0; i &lt; tabType.length; i++) {
+  if(tabType[i].id == id)
+    type = tabType[i]; // Passage de référence
+}
+
+// Si l'id n'existe pas dans le tableau de type choisit, on retourne false.
+if(!type)
+  return false;
+
+if(typeData === TYPE_TYPE){
+    if(objData.hasOwnProperty("nom"))
+      type.nom = objData.nom;
+
+    if(objData.hasOwnProperty("img"))
+      type.img = objData.img;
+}
+
+if(typeData === TYPE_AMIS){
+    if(objData.hasOwnProperty("nom"))
+        type.nom = objData.nom;
+    if(objData.hasOwnProperty("prenom"))
+        type.prenom = objData.prenom;
+    if(objData.hasOwnProperty("surnom"))
+        type.surnom = objData.surnom;
+}
+
+
+obj[typeData].value = tabType;
+//console.warn("-&gt;&gt;&gt;");
+//console.warn(type);
+
+fs.writeFile(pathFileOffline, JSON.stringify(obj), 'utf8', function (err) {
+  if (err){ throw err; return false; };
+  console.log('Fichier updater !');
+  callbackSuccess();
+  menu.reload();
+});
+</code></pre>
+<p>},<br />
+  &ldquo;getJson&rdquo;: function(pathFile, typeData){<br />
+    /*<em><br />
+      Capture le contenue du fichier offline<br />
+      Retourne l&rsquo;object json.<br />
+</em>/<br />
+    if(!pathFile){<br />
+      console.warn(&ldquo;Chemin non valide.&rdquo;);<br />
+      return false;<br />
+    }else{<br />
+      var jsonOut = JSON.parse(fs.readFileSync(pathFile));</p>
+<pre><code>  // Si le parametre indiquant le type de donnée souhaiter existe
+  // et que la donnée voulu existe aussi, on retourne le tableau voulu.
+  if(typeData &amp;&amp; jsonOut.hasOwnProperty(typeData))
+    jsonOut = jsonOut[typeData];
+
+  return jsonOut;
+}
+</code></pre>
+<p>},<br />
+  &ldquo;addJson&rdquo;: function(typeData, post, callback){<br />
+    /*<em><br />
+      Capture du json placé dans le fichier offline<br />
+      Ajout au fichier du nouveau type<br />
+      Ecriture du json dans la fichier offline<br />
+</em>/<br />
+    var obj = this.getJson(pathFileOffline),<br />
+        objType = obj[typeData],<br />
+        tabTypeVal = objType.value;<br />
+        //idNewInsert = tabType.length;</p>
+<pre><code>var newObj = {};
+// newObj.id = ++idNewInsert;
+for (var param in post) {
+  if (post.hasOwnProperty(param)) {
+    newObj[param] = post[param];
+  }
+}
+
+// Création du nouveau id et ajout au nouveau au nouveau élément
+var newId = ++objType.primaryKey;
+newObj.id = newId;
+
+// Ajout du nouvelle élément au tableau de l'object principal
+objType.value.push(newObj);
+
+/*
+tabType.push({
+  id: ++idNewInsert,
+  nom: post.nom,
+  img: post.pathImg
+});*/
+
+// Ajout de l'incrementation de la clef primaire
+objType.primaryKey = newId;
+
+fs.writeFile(pathFileOffline, JSON.stringify(obj), 'utf8', function (err) {
+  if (err){ throw err; return false; };
+  console.log('Info Ajouté au fichier !_1');
+
+  callback();
+  menu.reload();
+  return true;
+});
+</code></pre>
+<p>},</p>
+<p>&ldquo;delObj&rdquo;: function(typeData, nomChampId, id, obj){<br />
+    /*<em><br />
+      Capture du json placé dans le fichier offline<br />
+      Suppression des l&rsquo;objects json en fonction de l&rsquo;id passé en parametre<br />
+      ( Si le type de donnée a supprimer est TYPE_AMIS, on doit supprimer tous les prets au quel l&rsquo;amis est lier. )<br />
+      ( Le parametre &ldquo;obj&rdquo; ne contient rien au moment de l&rsquo;appel, il est utiliser en interne (récursion) pour continuer a modifier l&rsquo;object en cour )<br />
+      Ecriture du json dans la fichier offline<br />
+</em>/<br />
+    var isRecustion = false;</p>
+<pre><code>if(typeof obj === "undefined"){
+  obj = this.getJson(pathFileOffline);
+}else {
+  isRecustion = true;
+}
+
+var tabData = obj[typeData].value,
+    tabPosObjInBigObj = [];
+
+//console.warn("info: " + posObjInBigObj);
+//console.warn(tabData);
+//return false;
+
+var newTab = [];
+// Cherche la position de l'object par l'id recu
+for (var i = 0; i &lt; tabData.length; i++) {
+  var currObj = tabData[i];
+  if(currObj.hasOwnProperty(nomChampId) &amp;&amp; currObj[nomChampId] != id){
+    //if(typeData === TYPE_AMIS)
+    //console.warn(currObj);
+    //tabPosObjInBigObj.push(i);
+    newTab.push(currObj)
+  }
+}
+// En remplace les valeurs du json par les valeurs que nous voulons garder
+tabData = newTab;
+
+// Doit étre vant la récursive pour garder l'actualisation.
+// Ecrase les anciennces valeur par la selection de nouvelle.
+obj[typeData].value = tabData;
+
+/*
+var newTab = [];
+// On supprime l'element précedement trouvé si la position existe.
+for (var i = 0; i &lt; tabPosObjInBigObj.length; i++) {
+  console.warn(tabData);
+  if(!(tabPosObjInBigObj[i] in tabData)){
+    newTab.push();
+    if(typeData === TYPE_PRET)
+    console.warn("Suppresison: " + tabPosObjInBigObj[i]);
+    //delete tabData[posObjInBigObj]; // ECMA6, remplace la valeur par null
+    tabData.splice(tabPosObjInBigObj[i], 1);
+  }
+}*/
+
+// LA METHODE DOIT S'APPELER ELLE MéME DANS LE CAS DE LA SUPPRESSION D'UN AMIS, IL FAUT SUPPRIMER LES PRETS LIER AU AMIS
+if(typeData === TYPE_AMIS){
+  // On passe l'object actuel en parametre pour la modification.
+  file.delObj(TYPE_PRET, "idAmis", id, obj);
+}
+
+// LA METHODE DOIT S'APPELER ELLE MéME DANS LE CAS DE LA SUPPRESSION D'UN TYPE, IL FAUT SUPPRIMER LES PRETS LIER AU TYPE
+if(typeData === TYPE_TYPE){
+  // On passe l'object actuel en parametre pour la modification.
+  file.delObj(TYPE_PRET, "idType", id, obj);
+}
+
+// On place le tableau modifier dans l'object json global
+//  obj[typeData].value = tabData;
+// On remplace l'object json global si la fonction n'a pas été appeler de magniere récursive.
+console.warn(isRecustion);
+
+if(!isRecustion){
+  console.log(obj);
+  fs.writeFile(pathFileOffline, JSON.stringify(obj), 'utf8', function (err) {
+    if (err){ throw err; return false; };
+    console.log('Info Ajouté au fichier !');
+
+    return true;
+  });
+}
+</code></pre>
+<p>}<br />
+};</p>
+<p>/<strong><br />
+ *  Cette object est le premier demander, il fait les tests de sécurité puis on appel<br />
+ *  les methodes necessaire pour la sauvegarde.<br />
+ */<br />
+var submit = {<br />
+  type: {<br />
+    &ldquo;add&rdquo;: function(nom, pathImg, callback){<br />
+      /</strong><br />
+        Vérifie que le nom du type est un nom valide.<br />
+        Ajoute le nom au fichier json.<br />
+        Si l&rsquo;image existe, on la copie dans le dossier.<br />
+      */</p>
+<pre><code>  var etatCtrl = control.type(nom);
+
+  if(!etatCtrl.success){
+    dialog.showErrorBox("Message d'erreur", etatCtrl.msgError);
+    return false;
+  }
+
+  file.isFileExist(pathFileOffline, function(){
+    // Les key doivents correspondre parfaitement au key figurant dans le fichier offline.
+    // les véritabe key ajouté dans le fichier sont indiquer ici.
+
+    file.addJson(TYPE_TYPE, {"nom": nom, "img": null}, function(){
+
+      var lastInsertId = file.getLastId("type");
+      //alert(lastInsertId + " &lt;-");
+
+      if(isNaN(lastInsertId)){
+          console.warn("Erreur d'insertion du nom.");
+          return false;
+      }
+
+      if(app.isImg(pathImg))
+        if(app.fileExist(pathImg)){
+          app.addImg(lastInsertId, pathImg);
+        }else
+          dialog.showErrorBox("Message d'erreur", "Fichier offline.json introuvable.");
+      else {
+        console.warn("Le fichier doit étre une img");
+      }
+
+      callback();
+    });
+  });
+}
+</code></pre>
+<p>},<br />
+  amis: {<br />
+    &ldquo;add&rdquo;: function(form, callback){<br />
+      /*<em><br />
+        Vérifie que le nom du type est un nom valide.<br />
+        Ajoute le nom au fichier json.<br />
+</em>/<br />
+      var etatCtrl = control.amis(form);</p>
+<pre><code>  if(!etatCtrl.success){
+    dialog.showErrorBox("Message d'erreur", etatCtrl.msgError);
+    return false;
+  }else{
+    file.isFileExist(pathFileOffline, function(){
+      // Les key doivents correspondre parfaitement au key figurant dans le fichier offline.
+      // les véritabe key ajouté dans le fichier sont indiquer ici.
+      file.addJson(TYPE_AMIS, form, function(){
+        dialog.showMessageBox({
+            type: "info",
+            title: "Succès",
+            message: "Ajout réussit",
+            detail: "L'ajout de l'amis " + form.surnom + " ajouté avec succès.",
+            buttons: ["OK"]
+          }
+        );
+        callback();
+      });
+    });
+  }
+}
+</code></pre>
+<p>},<br />
+  pret: {<br />
+    &ldquo;add&rdquo;: function(form, callback){<br />
+      /*<em><br />
+        Vérifie que le nom du type est un nom valide.<br />
+        Ajoute le nom au fichier json.<br />
+</em>/<br />
+      var etatCtrl = control.amis(form);</p>
+<pre><code>  // Ne garde que les éléments du tableau avec un valeur pleine.
+  if(typeof form.tabTypeInfo == "object"){
+    var valInTabExisted = false,
+      tabVerified = [],
+      msgErrorInfo = "";
+
+    form.tabTypeInfo.forEach(function(currentVal, index){
+      if (/[\w\s]{3,}/ig.exec(currentVal)) {
+        tabVerified.push(currentVal);
+        valInTabExisted = true;
+      }
+    });
+
+    // On place l'eventuel erreur que si aucune valeur n'a été trouvé ou ne correspond.
+    if(!valInTabExisted){
+      etatCtrl.msgError += "\nLes champs d'information doivent avoir au moin 3 caracteres.";
+      etatCtrl.success = false;
+    }
+
+    // Remplace le tableau d'info recu par le nouveau contenant des valeurs remplit.
+    form.tabTypeInfo = tabVerified;
+  }
+
+  if(!etatCtrl.success){
+    dialog.showErrorBox("Message d'erreur", etatCtrl.msgError);
+    return false;
+  }else{
+    file.isFileExist(pathFileOffline, function(){
+      // Les key doivents correspondre parfaitement au key figurant dans le fichier offline.
+      // les véritabe key ajouté dans le fichier sont indiquer ici.
+      file.addJson(TYPE_PRET, form, function(){
+        dialog.showMessageBox({
+            type: "info",
+            title: "Succès",
+            message: "Enregistrement réussit.",
+            detail: "Le pret est maintenant accesible facilement sur votre interface.",
+            buttons: ["OK"]
+          }
+        );
+        callback();
+      });
+    });
+  }
+}
+</code></pre>
+<p>}<br />
+};</p>
+<p>var control = {<br />
+  type: function(nom){<br />
+    var errorFinded = false,<br />
+        msgError = &ldquo;&rdquo;;<br />
+    // Le nom est obligatoire, on ne fait rien sans nom.<br />
+    if(!nom || !/[\w\s]{3,}/ig.exec(nom)){<br />
+      msgError = &ldquo;Vous devez indiquer un nom de type. [min: 3 caractères]&rdquo;;<br />
+      errorFinded = true;<br />
+    }</p>
+<pre><code>return {
+  success: !errorFinded,
+  "msgError": msgError
+};
+</code></pre>
+<p>},<br />
+  amis: function(form){<br />
+    var errorFinded = false,<br />
+        msgError = &ldquo;&rdquo;;</p>
+<pre><code>if(form.nom &amp;&amp; !/[\w\s]{3,}/ig.exec(form.nom)){
+  msgError = "Vous devez indiquer un nom de votre amis. [min: 3 caractères]";
+  errorFinded = true;
+}
+
+if(form.prenom &amp;&amp; !/[\w\s]{3,}/ig.exec(form.prenom)){
+  msgError += "\nVous devez indiquer un prenom de votre amis. [min: 3 caractères]";
+  errorFinded = true;
+}
+
+// Le surnom n'est pas obligatoire
+if(!form.surnom || !/[\w\s]{3,}/ig.exec(form.surnom)){
+  msgError += "\nVous devez indiquer le surnom de votre amis. [min: 3 caractères]";
+  errorFinded = true;
+}
+
+return {
+  success: !errorFinded,
+  "msgError": msgError
+};
+</code></pre>
+<p>},<br />
+  pret: function(form){<br />
+    var errorFinded = false,<br />
+        msgError = &ldquo;&rdquo;;</p>
+<pre><code>if(form.idType == undefined || !/^\d{1,}$/i.exec(parseInt(form.idType))){
+  msgError = "Erreur d'identifiant pour le champ de prêt.";
+  errorFinded = true;
+}
+
+if(form.idAmis == undefined || !/^\d{1,}$/ig.exec(parseInt(form.idAmis))){
+  msgError += "\nErreur d'identifiant pour le champ d'amis.";
+  errorFinded = true;
+}
+
+if(!form.qte || !/^\d{1,}$/ig.exec(parseInt(form.qte)) || form.qte == 0 || form.qte &gt;= 10){
+  msgError += "\nErreur dans le champ de quantité [1-10].";
+  errorFinded = true;
+}
+
+if(!form.tabTypeInfo){
+  msgError += "\nAucune information sur le partage n'a été fournit.";
+  errorFinded = true;
+}
+
+return {
+  success: !errorFinded,
+  "msgError": msgError
+};
+</code></pre>
+<p>}<br />
+};</p>
+<p>/*<em><br />
+  &ndash; Gestion des Event<br />
+</em>/<br />
+var $btnPlus = $(&ldquo;#btnReload&rdquo;);<br />
+$btnPlus.on(&ldquo;click&rdquo;, function(){<br />
+  //alert(&ldquo;ok&rdquo;);<br />
+  //fs.appendFile(&lsquo;message.txt&rsquo;, &lsquo;data to append\n&rsquo;, &lsquo;utf8&rsquo;);<br />
+  remote.getCurrentWindow().reload();<br />
+  event.preventDefault();<br />
+});</p>
+<p>var $btnAddPret = $(&ldquo;#btnAddPret&rdquo;),<br />
+    $ctnPret = $(&ldquo;.ctnPret&rdquo;),<br />
+    $ctnGestion = $(&ldquo;.ctnGestion&rdquo;),<br />
+    isGestionOpen = false,<br />
+    vitesse = 400;</p>
+<p>$(&ldquo;.btnType&rdquo;).eq(0).toggleClass(&ldquo;focusedType&rdquo;);</p>
+<p>$btnAddPret.on(&ldquo;click&rdquo;, function(){<br />
+  //alert(&ldquo;ok&rdquo;);<br />
+  //fs.appendFile(&lsquo;message.txt&rsquo;, &lsquo;data to append\n&rsquo;, &lsquo;utf8&rsquo;);<br />
+  $(this).toggleClass(&ldquo;btnAddPretEffet&rdquo;);</p>
+<p>if(isGestionOpen){<br />
+    $ctnPret.fadeIn(vitesse);<br />
+    $ctnGestion.fadeOut(vitesse);<br />
+  }else {<br />
+    // Très important: pour un effet réussit, il faut que ctnPret (qui est l&rsquo;élément du dessus)<br />
+    // disparaisse directement pour que la scroll focus le ctnGestion puis aa ce moment la il<br />
+    // faut activer l&rsquo;effet en douceur pour le rendre visible.<br />
+    // Suppression des signes d&rsquo;ouverture de la fenetre de gestion<br />
+    hideFn();</p>
+<pre><code>$ctnGestion.fadeIn(vitesse);
+</code></pre>
+<p>}<br />
+  isGestionOpen = !isGestionOpen;</p>
+<p>event.preventDefault();<br />
+});</p>
+<p>var $formType = $(&ldquo;#formType&rdquo;),<br />
+    $formAmis = $(&ldquo;#formAmis&rdquo;),<br />
+    $formPret = $(&ldquo;#formPret&rdquo;),<br />
+    $nomType = $(&ldquo;#nomAddTypeNom&rdquo;),<br />
+    nomTypeVal = pathImg = null;</p>
+<p>$formType.on(&ldquo;submit&rdquo;, function(event){<br />
+  nomTypeVal = $nomType.val();</p>
+<p>submit.type.add(nomTypeVal, pathImg, function(){<br />
+    document.getElementById(&ldquo;formType&rdquo;).reset();<br />
+    pathImg = null;<br />
+    actuList(TYPE_TYPE);<br />
+  });</p>
+<p>event.preventDefault();<br />
+});</p>
+<p>$formAmis.on(&ldquo;submit&rdquo;, function(event){</p>
+<p>var objForm =  $(this).serializeArray(),<br />
+    nom = objForm[0].value,<br />
+    prenom = objForm[1].value,<br />
+    surnom = objForm[2].value;</p>
+<p>submit.amis.add({<br />
+    &ldquo;nom&rdquo;: nom,<br />
+    &ldquo;prenom&rdquo;: prenom,<br />
+    &ldquo;surnom&rdquo;: surnom<br />
+  }, function(){<br />
+    document.getElementById(&ldquo;formAmis&rdquo;).reset();<br />
+    actuList(TYPE_AMIS);<br />
+  });</p>
+<p>event.preventDefault();<br />
+});</p>
+<p>$formPret.on(&ldquo;submit&rdquo;, function(event){<br />
+  //console.log(document.getElementById(&ldquo;formPret&rdquo;).elements[&ldquo;idPret&rdquo;].value);<br />
+  //console.log(document.getElementById(&ldquo;formPret&rdquo;).elements);</p>
+<p>var formP = document.getElementById(&ldquo;formPret&rdquo;).elements,<br />
+      idType = formP[&ldquo;idType&rdquo;].value,<br />
+      qte = formP[&ldquo;qte&rdquo;].value,<br />
+      tabTypeInfo  = null,<br />
+      idAmis = formP[&ldquo;idAmis&rdquo;].value,<br />
+      descri = formP[&ldquo;descri&rdquo;].value,<br />
+      dateR = formP[&ldquo;dateRecu&rdquo;].value;</p>
+<p>if(formP.hasOwnProperty(&ldquo;tabTypeInfo&rdquo;)){<br />
+      tabTypeInfo = formP[&ldquo;tabTypeInfo&rdquo;];</p>
+<pre><code>// Construit un tableau contenant les valeurs des "info" du type choisit
+var tabInfoQte = [];
+if(tabTypeInfo.nodeName != undefined)
+  tabInfoQte.push(tabTypeInfo.value);
+else{
+  for (var varr in tabTypeInfo) {
+    if (tabTypeInfo.hasOwnProperty(varr)) {
+      tabInfoQte.push(tabTypeInfo[varr].value);
+    }
+  }
+}
+</code></pre>
+<p>}</p>
+<p>var d = new Date(),<br />
+      dateCrea = d.getDate() + &ldquo;.&rdquo; + getMonth(d) + &ldquo;.&rdquo; + d.getFullYear();</p>
+<p>//console.warn(dateCrea);<br />
+  // parseInt retourne NaN si ce n&rsquo;est pas un nombre, les teste suivant permettre d&rsquo;empecher l&rsquo;enregistrement</p>
+<p>submit.pret.add({<br />
+    &ldquo;idType&rdquo;: parseInt(idType),<br />
+    &ldquo;idAmis&rdquo;: parseInt(idAmis),<br />
+    &ldquo;description&rdquo;: descri,<br />
+    &ldquo;dateCreate&rdquo;: dateCrea,<br />
+    &ldquo;dateRecup&rdquo;: dateR,<br />
+    &ldquo;qte&rdquo;: parseInt(qte),<br />
+    &ldquo;tabTypeInfo&rdquo;: tabInfoQte<br />
+  }, function(){<br />
+    document.getElementById(&ldquo;formPret&rdquo;).reset();<br />
+  });</p>
+<p>event.preventDefault();<br />
+});</p>
+<p>var listPret = $(&ldquo;.listPret&rdquo;),<br />
+    inpNbr = $(&ldquo;.input_nbr&rdquo;),<br />
+    tplLine = $(&ldquo;.lineSupInfo&rdquo;).clone(),<br />
+    ctnLine = $(&ldquo;.ctnLine&rdquo;),<br />
+    typeNom = null,<br />
+    isFirstTime = true; // Permet de capturer le premier élément au mooment de la pression d&rsquo;une touche dans la zone qte</p>
+<p>inpNbr.on(&ldquo;keyup&rdquo;, function(event){<br />
+  var nbr = $(this).val();</p>
+<p>// Resset toutes les lignes eventuellement générer par un precedent ajout dans le champ qte<br />
+  ctnLine.html(&ldquo;&rdquo;);<br />
+  if(!/\d{1,}/i.exec(nbr)){<br />
+    return false;<br />
+  }</p>
+<p>// Permet de capturer le premier nom dans la liste si aucun élément n&rsquo;a été selectionner dans la liste.<br />
+  if(isFirstTime &amp;&amp; !typeNom){<br />
+    typeNom = listPret.children().eq(0).html();<br />
+    isFirstTime = false;<br />
+  }</p>
+<p>// Un des deux limite du nombre d&rsquo;entré<br />
+  if(nbr &gt; 10)<br />
+    nbr = 10;</p>
+<p>for (var i = 0; i &lt; nbr; i++) {<br />
+    var currLine = tplLine.clone();<br />
+    currLine.children(&ldquo;label&rdquo;).append(&rdquo; <span class=\"typeNom\">&rdquo; + typeNom + &ldquo;</span> &rdquo; + (i + 1) + &ldquo;:&rdquo;);<br />
+    currLine.children(&ldquo;input&rdquo;).attr(&ldquo;name&rdquo;, &ldquo;tabTypeInfo&rdquo;);<br />
+    ctnLine.append(currLine.get(0));<br />
+  }</p>
+<p>ctnLine.children().show();<br />
+});</p>
+<p>listPret.on(&ldquo;change&rdquo;, function(event){<br />
+  /*<em><br />
+    Permet de carger le nom de l&rsquo;élément nouvellement selectionner.<br />
+</em>/</p>
+<p>var listDom = $(listPret).get(0);<br />
+  var typeNom = listDom.options[listDom.selectedIndex].text;</p>
+<p>//console.warn(&ldquo;change nom: &rdquo; + typeNom);<br />
+  $(&ldquo;.typeNom&rdquo;).html(typeNom);<br />
+});</p>
+<p>// Fait disparaitre le contenu actuellement affiché et affiche le<br />
+// block contenant les amis.<br />
+var $ctnAmis = $(&ldquo;.ctnAmis&rdquo;),<br />
+    $ctnType = $(&ldquo;.ctnType&rdquo;),<br />
+    isFnAmisOpen = false,<br />
+    isFnTypeOpen = false;</p>
+<p>$(&ldquo;.btnShowFn&rdquo;).on(&ldquo;click&rdquo;, function(event){<br />
+  var nomFn = $(this).attr(&ldquo;data-fn&rdquo;);</p>
+<p>if(nomFn == &ldquo;amis&rdquo;){<br />
+    isFnTypeOpen = false;</p>
+<pre><code>if(isFnAmisOpen){
+  $ctnPret.fadeIn(vitesse);
+  $ctnAmis.fadeOut(vitesse);
+}else {
+  // Suppression des signes d'ouverture de la fenetre de gestion
+  $("#btnAddPret").removeClass("btnAddPretEffet");
+  isGestionOpen = false;
+
+  hideFn();
+
+  $ctnAmis.fadeIn(vitesse);
+}
+isFnAmisOpen = !isFnAmisOpen;
+</code></pre>
+<p>}else if(nomFn == &ldquo;type&rdquo;){<br />
+    isFnAmisOpen = false;</p>
+<pre><code>if(isFnTypeOpen){
+  $ctnPret.fadeIn(vitesse);
+  $ctnType.fadeOut(vitesse);
+}else {
+  // Suppression des signes d'ouverture de la fenetre de gestion
+  $("#btnAddPret").removeClass("btnAddPretEffet");
+  isGestionOpen = false;
+
+  hideFn();
+
+  $ctnType.fadeIn(vitesse);
+}
+isFnTypeOpen = !isFnTypeOpen;
+</code></pre>
+<p>}</p>
+<p>event.preventDefault();<br />
+});</p>
+<p>var isModUpdateOpen = false,<br />
+    currentElemOpen = null;</p>
+<p>var $ctnPret = $(&ldquo;.ctnPret&rdquo;);</p>
+<p>$(&ldquo;#title&rdquo;).on(&ldquo;click&rdquo;, function(event){</p>
+<p>try {<br />
+    // Suppression des signes d&rsquo;ouverture de la fenetre de gestion<br />
+    $(&ldquo;#btnAddPret&rdquo;).removeClass(&ldquo;btnAddPretEffet&rdquo;);<br />
+    isGestionOpen = false;</p>
+<pre><code>// Permet d'afficher tous les prets (evite d'ouvrir le menu pour changer de liens)
+actuList(TYPE_PRET, -1);
+
+hideFn();
+
+$ctnPret.fadeIn(vitesse);
+</code></pre>
+<p>} catch (e) {<br />
+    location.reload();<br />
+  } finally {<br />
+    event.preventDefault();<br />
+  }<br />
+});</p>
+<p>function eventMenuLeft(){</p>
+<p>$(&ldquo;.btnType&rdquo;).on(&ldquo;click&rdquo;, function(event){</p>
+<pre><code>var idType = $(this).attr("data-idtype"),
+    currFocused = $(".focusedType").eq(0);
+
+if(!currFocused.is($(this))){
+  currFocused.removeClass("focusedType");
+  $(this).toggleClass("focusedType");
+}
+
+if(!isNaN(parseInt(idType))){
+  actuList(TYPE_PRET, idType);
+}else
+  console.warn("Erreur: L'id de l'élément du menu n'est pas valide.");
+
+event.preventDefault();
+</code></pre>
+<p>});</p>
+<p>}</p>
+<p>function eventClicUpdate(classButton, classTop, attrIdElem, noeudModif){<br />
+  $(classButton).on(&ldquo;click&rdquo;, function(event){<br />
+    var idElem = $(this).parent().attr(attrIdElem);</p>
+<pre><code>if(!isNaN(parseInt(idElem))){
+
+  // On enleve les input des élémens a modifier si on clique sur le bouton modifier d'un autre object
+  if(currentElemOpen != this){
+    $(".inputUpdate").each(function(index, element){
+      $(element).parent().html($(element).val());
+    });
+    $(currentElemOpen).text("Modifier");
+    isModUpdateOpen = false;
+  }
+
+  $(this).text(isModUpdateOpen?  "Modifier" : "Annuler");
+
+  var parentTop = $(this).parents(classTop),
+      tCtn = [];
+
+  noeudModif(tCtn, parentTop);
+  /*
+  tCtn.push(parentTop.find(".spanValueAmis_nom"));
+  tCtn.push(parentTop.find(".spanValueAmis_prenom"));
+  tCtn.push(parentTop.find(".spanValueAmis_surnom"));
+</code></pre>
+<p>*/<br />
+      // Si on change de bouton &ldquo;modifier&rdquo;, on cache l&rsquo;ancien bouton<br />
+      if(currentElemOpen != this)<br />
+        $(currentElemOpen).parents(classTop).find(&ldquo;.ctnBtnSave&rdquo;).slideUp(vitesse);<br />
+      else<br />
+        // Cache le bouton &ldquo;modifier&rdquo; quand il était afficher et qu&rsquo;on reclique sur le bouton<br />
+        parentTop.find(&ldquo;.ctnBtnSave&rdquo;).slideUp(vitesse);</p>
+<pre><code>  if(!isModUpdateOpen)
+    parentTop.find(".ctnBtnSave").slideDown(vitesse);
+
+  for (var i = 0; i &lt; tCtn.length; i++) {
+    tCtn[i].html(isModUpdateOpen? tCtn[i].children().val() : '&lt;input type="text" value="'+tCtn[i].text()+'" class="inputUpdate" /&gt;');
+  }
+}else
+  console.warn("Erreur: L'id de l'élément du menu n'est pas valide.");
+
+isModUpdateOpen = !isModUpdateOpen;
+currentElemOpen = this;
+
+event.preventDefault();
+</code></pre>
+<p>});<br />
+}</p>
+<p>function hideLastModif(){<br />
+  $(&ldquo;.inputUpdate&rdquo;).each(function(index, element){<br />
+    $(element).parent().html($(element).val());<br />
+  });<br />
+  $(currentElemOpen).text(&ldquo;Modifier&rdquo;);<br />
+  isModUpdateOpen = false;<br />
+  $(&ldquo;.ctnBtnSave&rdquo;).slideUp(vitesse);<br />
+}</p>
+<p>function eventClickUpdate(){</p>
+<p>}</p>
+<p>function eventListAmis(){</p>
+<p>clickDelElem(&ldquo;.btnDelAmis&rdquo;, TYPE_AMIS, &ldquo;data-idAmis&rdquo;, function(){<br />
+    // On actualise a nouveau la liste d&rsquo;amis<br />
+    actuList(TYPE_AMIS);<br />
+    actuList(TYPE_PRET);<br />
+  });</p>
+<p>eventClicUpdate(&ldquo;.btnUpdateAmis&rdquo;, &ldquo;.blockAmis&rdquo;, &ldquo;data-idAmis&rdquo;, function(tab, noeudParent){<br />
+    tab.push(noeudParent.find(&ldquo;.spanValueAmis_nom&rdquo;));<br />
+    tab.push(noeudParent.find(&ldquo;.spanValueAmis_prenom&rdquo;));<br />
+    tab.push(noeudParent.find(&ldquo;.spanValueAmis_surnom&rdquo;));<br />
+  });</p>
+<p>// Bouton de sauvegarde<br />
+  $(&ldquo;.lienValide&rdquo;).on(&ldquo;click&rdquo;, function(event){<br />
+    var idElem = $(this).parent().attr(&ldquo;data-idAmis&rdquo;);</p>
+<pre><code>if(!isNaN(parseInt(idElem))){
+
+  var parentTop = $(this).parents(".blockAmis"),
+      tCtn = {};
+
+  tCtn.nom = parentTop.find(".spanValueAmis_nom &gt; input").val();
+  tCtn.prenom = parentTop.find(".spanValueAmis_prenom &gt; input").val();
+  tCtn.surnom = parentTop.find(".spanValueAmis_surnom &gt; input").val();
+
+  file.update(TYPE_AMIS, idElem, tCtn, function(){
+    dialog.showMessageBox({
+        type: "info",
+        title: "Succès",
+        message: "Mise a jour réussit",
+        detail: "La mise a jour de l'amis " + tCtn.surnom + " effectué avec succès.",
+        buttons: ["OK"]
+      });
+      hideLastModif();
+  });
+}else
+  console.warn("Erreur: L'id de l'élément de sauvegarde n'est pas valide.");
+
+event.preventDefault();
+</code></pre>
+<p>});<br />
+}</p>
+<p>function eventListType(){</p>
+<p>clickDelElem(&ldquo;.btnDelType&rdquo;, TYPE_TYPE, &ldquo;data-idType&rdquo;, function(){<br />
+    // On actualise a nouveau la liste d&rsquo;amis<br />
+    actuList(TYPE_TYPE);<br />
+    actuList(TYPE_PRET);<br />
+  });</p>
+<p>eventClicUpdate(&ldquo;.btnUpdateType&rdquo;, &ldquo;.lineType&rdquo;, &ldquo;data-idtype&rdquo;, function(tab, noeudParent){<br />
+    tab.push(noeudParent.find(&ldquo;.titreType&rdquo;));<br />
+  });<br />
+}</p>
+<p>function eventListPret(){</p>
+<p>clickDelElem(&ldquo;.btnDelPret&rdquo;, TYPE_PRET, &ldquo;data-idpret&rdquo;, function(){<br />
+    // On actualise a nouveau la liste d&rsquo;amis<br />
+    actuList(TYPE_PRET);<br />
+  });<br />
+}</p>
+<p>function clickDelElem(classBtn, typeData, attrIdElem, callbackActu){<br />
+  $(classBtn).on(&ldquo;click&rdquo;, function(event){<br />
+    var resultBtn = dialog.showMessageBox({<br />
+        type: &ldquo;info&rdquo;,<br />
+        title: &ldquo;Confirmation&rdquo;,<br />
+        message: &ldquo;Confirmation de suppression&rdquo;,<br />
+        detail: &ldquo;Êtes-vous sure de vouloir supprimer cet élément ?&rdquo;,<br />
+        buttons: [&ldquo;Non&rdquo;,&rdquo;Oui&rdquo;]<br />
+      }<br />
+    );</p>
+<pre><code>// Si le bouton "oui" est cliquer
+if(resultBtn === 1){
+  var idElem = $(this).parent().attr(attrIdElem);
+
+  if(!isNaN(parseInt(idElem))){
+
+    file.delObj(typeData, 'id', idElem);
+
+    // On actualise a nouveau les éléments après suppression
+    callbackActu();
+  }else
+    console.warn("Erreur: L'id de l'élément du menu n'est pas valide.");
+}
+event.preventDefault();
+</code></pre>
+<p>});<br />
+}</p>
+<p>$(&ldquo;#dateRecu&rdquo;).pickadate({<br />
+    //formatSubmit: &lsquo;yyyy/mm/dd&rsquo;,<br />
+    //container: &lsquo;#container&rsquo;<br />
+  &ldquo;selectMonths&rdquo;: true,<br />
+  &ldquo;selectYears&rdquo;: true,<br />
+  &ldquo;format&rdquo;: &lsquo;dd.mm.yyyy&rsquo;<br />
+});</p>
+<p>/*<em><br />
+  &ndash; Gestion du drag and drop pour l&rsquo;image.<br />
+</em>/<br />
+var img = document.getElementById(&lsquo;nomAddTypeImg&rsquo;);<br />
+img.ondragover = function () {<br />
+  //console.info(&ldquo;--------- drag&rdquo;);<br />
+  return false;<br />
+};<br />
+img.ondragleave = img.ondragend = function () {<br />
+  //console.info(&ldquo;--------- leave&rdquo;);<br />
+  return false;<br />
+};<br />
+img.ondrop = function (e) {<br />
+    //console.info(&ldquo;--------- drop&rdquo;);<br />
+  e.preventDefault();<br />
+  var file = e.dataTransfer.files[0];<br />
+  pathImg = file.path;<br />
+  console.log(&lsquo;File you dragged here is&rsquo;, file.path);<br />
+  var tabPath = path.parse(file.path);<br />
+  $(&ldquo;.ctnAffiNameImg&rdquo;).html(tabPath.name + &rdquo; &rdquo; + tabPath.ext);<br />
+  return false;<br />
+};</p>
+<p>function hideFn(){<br />
+  // Remise a 0 des variables utlisé par la fenetre<br />
+  sModUpdateOpen = false,<br />
+  currentElemOpen = null;</p>
+<p>// Cachement de la fenetres ouvertes<br />
+  $(&ldquo;.ctnPage&rdquo;).each(function(index, element){<br />
+    if($(element).css(&ldquo;display&rdquo;) == &ldquo;block&rdquo;)<br />
+      $(element).hide(0);<br />
+  });<br />
+}</p>
+<p>/*<em><br />
+  &ndash; Empecher de charger les fichier glisser n&rsquo;importe ou dans la fenetre.<br />
+</em>/<br />
+document.addEventListener(&lsquo;dragover&rsquo;,function(event){<br />
+   event.preventDefault();<br />
+   return false;<br />
+ },false);</p>
+<p>document.addEventListener(&lsquo;drop&rsquo;,function(event){<br />
+   event.preventDefault();<br />
+   return false;<br />
+ },false);</p>
+<p>hideFn();<br />
+ $ctnAmis.fadeIn(vitesse);</p></article></body></html>

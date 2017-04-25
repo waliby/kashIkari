@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="pretox">
+    <head>
+        <meta charset="UTF-8">
+        <title>Gestionnaire de prêt</title>
+        <!--<script type="text/javascript" src="http://localhost:35729/livereload.js"></script>-->
+        <link rel="stylesheet" href="./css/style.css" media="screen" title="no title" charset="utf-8">
+        <script type="text/javascript" src="./js/librairie/jquery.js"></script>
+        <link rel="stylesheet" href="./css/popup.css" charset="utf-8">
+        <link rel="stylesheet" href="./js/librairie/pickadate/themes/classic.css" charset="utf-8">
+        <link rel="stylesheet" href="./js/librairie/pickadate/compressed/themes/classic.date.css" charset="utf-8">
+        <!--<script src="./js/librairie/magnificPopup.js"></script>-->
+        <script src="./js/function.js"></script>
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+      <div class="barTop">
+        <span id="ctnLeftBarTop">
+            <a href="#" id="btnShowMenu"></a>
+            <a href="#" id="title" >kashIkari</a> <!-- onclick="location.reload();" -->
+        </span>
+        <span id="ctnSearchBar">
+          <div>
+            <input type="text" name="name" id="motorSearch" value="">
+            <span></span>
+          </div>
+          <div id="ctnDataSearch">
+                <!--<ul>
+                    <li>test</li>
+                    <li>test</li>
+                    <li>test</li>
+                </ul>-->
+          </div>
+      </span>
+      <span id="ctnBtnRightSearch">
+        <span id="btnAddPret"></span>
+        <span id="btnReload">R</span>
+      </span>
+      <a href="#" id="btnParam">
+        Paramètres
+        <ul id="listOptTop">
+          <li class="lienNoDispo">Profil</li>
+          <li class="lienNoDispo">Connexion</li>
+          <li class="btnShowFn" data-fn="amis">Mes amis</li>
+          <li class="btnShowFn" data-fn="type">Mes types</li>
+        </ul>
+      </a>
+      </div>
+      <div class="ctnCorp">
+          <div class="menuLeft">
+              <div class="btnHideMenu">←</div>
+              <div class="btnType" data-idtype="-1">
+                Afficher tout
+              </div>
+              <ul id="ulMenuLeft">
+                  <li><a href="" class="btnType">
+                    <span class="menu_img" style="background-image: url('../dataUser/imgUser/dvd.jpg')"></span>
+                    <span>Menu 1</span></a>
+                  </li>
+              </ul>
+          </div>
+          <div class="corp">
+              <div id="fondOver"></div>
+              <div class="save_line" style="display: none;">
+                <p id="lineNoPretInCat">
+                  Aucun prêt n'est lier a cette catégorie.
+                </p>
+              </div>
+              <div class="ctnPage ctnPret" data-value="index">
+                  <!--<div class="ctnShare">
+                      <div class="ctnImgShare">
+                          <div>
+                              <img src="img/mind_brain_thinking.png" alt="" />
+                          </div>
+                          <span class="spanHackHeight"> </span>
+                      </div>
+                      <div class="ctnRightShare">
+                          <div class="ctnTitreShare">
+                              Partage de 5 dvd a <a href="">gerard</a>
+                              <div class="ctnDateRight">
+                                <div><span>Prêter le</span>  10.02.1998</div>
+                                <div><span>A rendre le</span> 10.02.1998</div>
+                              </div>
+                          </div>
+                          <div class="ctnDescriShare">
+                            Partage de 5 dvd a gerard
+                            <ul class="listInfoPret">
+                              <li><span>Veleur</span></li>
+                              <li><span>Veleur 1</span></li>
+                              <li><span>Valeur 2</span></li>
+                            </ul>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="ctnShare">
+                      <div class="ctnImgShare">
+                          <div>
+                              <img src="img/mind_brain_thinking.png" alt="" />
+                          </div>
+                          <span class="spanHackHeight"> </span>
+                      </div>
+                      <div class="ctnRightShare">
+                          <div class="ctnTitreShare">
+                            Partage de 5 dvd a gerard
+                            <div class="ctnDateRight">
+                              <div><span>Prêter le</span>  10.02.1998</div>
+                              <div><span>A rendre le</span> 10.02.1998</div>
+                            </div>
+                          </div>
+                          <div class="ctnDescriShare">
+                            Partage de 5 dvd a gerard
+                            <ul class="listInfoPret">
+                              <li><span>Veleur</span></li>
+                              <li><span>Veleur 1</span></li>
+                              <li><span>Valeur 2</span></li>
+                            </ul>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="ctnShare">
+                      <div class="ctnImgShare">
+                          <div>
+                              <img src="img/mind_brain_thinking.png" alt="" />
+                          </div>
+                          <span class="spanHackHeight"> </span>
+                      </div>
+                      <div class="ctnRightShare">
+                          <div class="ctnTitreShare">
+                            Partage de 5 dvd a gerard
+                          </div>
+                      </div>
+                  </div>-->
+              </div>
+              <div class="ctnPage ctnGestion" data-value="gestion">
+                  <div class="ctnChoixAdd">
+                      <div class="ctnBtnCatAdd">
+                          <span data-idMenu="1">Prêt</span>
+                          <span data-idMenu="2">Amis</span>
+                          <span data-idMenu="3">Type de prêt</span>
+                      </div>
+                  </div>
+                  <div class="ctnPartGestion" data-idMenu="1">
+                    <form class="" action="index.html" method="post" id="formPret">
+                        <div class="ctnLineForm" ng-controller="gestionPret">
+                          <div class="ctnChoixPret">
+                            <label for="">* Type de prêt</label>
+                            <select class="listPret" name="idType">
+                              <option value="1">test</option>
+                              <option value="2">test1</option>
+                              <option value="3">test2</option>
+                            </select>
+                            <label for="">* Qte</label>
+                            <input type="text" name="qte" class="input_nbr">
+                          </div>
+                          <div class="ctnChoixPret">
+                            <div class="lineSupInfo" style="display: none;">
+                              <label for="">Information</label><input type="text" value=""/>
+                            </div>
+                            <div class="ctnLine">
+
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ctnLineForm">
+                            <label for="">* Ami conserné par le prêt</label>
+                            <select class="listAmis" name="idAmis">
+                              <option value="">-</option>
+                            </select>
+                        </div>
+                        <div class="ctnLineForm">
+                            <label for="">Description</label>
+                            <input type="text" id="descri" name="descri" value="">
+                        </div>
+                        <div class="ctnLineForm">
+                            <label for="">Date de récuperation</label>
+                            <input type="text" readonly id="dateRecu" name="dateRecu" value="">
+                        </div>
+                        <div class="ctnBtnSbtn">
+                            <input type="reset" name="name" value="Vider">
+                            <input type="submit" name="name" value="Enregistrer">
+                        </div>
+                    </form>
+                  </div>
+                  <div class="ctnPartGestion" data-idMenu="2">
+                    <form class="" action="index.html" method="post" id="formAmis">
+                        <div class="ctnLineForm">
+                            <label for="">Nom</label>
+                            <input type="text" name="nom" value="">
+                        </div>
+                        <div class="ctnLineForm">
+                            <label for="">Prenom</label>
+                            <input type="text" name="prenom" value="">
+                        </div>
+                        <div class="ctnLineForm">
+                            <label for="">* Surnom</label>
+                            <input type="text" name="surnom" value="">
+                        </div>
+                        <div class="ctnBtnSbtn">
+                            <input type="reset" name="name" value="Vider">
+                            <input type="submit" name="name" value="Enregistrer">
+                        </div>
+                    </form>
+                  </div>
+                  <div class="ctnPartGestion" data-idMenu="3">
+                    <form class="" action="index.html" method="post" id="formType">
+                        <div class="ctnLineForm">
+                            <label for="">* Nom</label>
+                            <input type="text" name="nom" id="nomAddTypeNom" value="">
+                        </div>
+                        <div class="ctnLineForm">
+                            <label for="">Image</label>
+                            <div id="nomAddTypeImg">
+                              <span class="spanHackHeight"> </span>
+                              <span>Deplacer votre fichier ici
+                                <div class="ctnAffiNameImg">
+
+                                </div>
+                              </span>
+                            </div>
+                        </div>
+                        <div class="ctnBtnSbtn">
+                            <input type="reset" name="name" value="Vider">
+                            <input type="submit" name="name" value="Enregistrer">
+                        </div>
+                    </form>
+                  </div>
+              </div>
+
+              <div class="ctnPage ctnAmis" data-value="profil">
+                  <!--<form class="" action="#" method="post" id="formProfil">-->
+                      <div class="infoSection">
+                        Liste d'amis
+                      </div>
+                      <div class="ctnListAmis">
+                        <!--<div class="blockAmis">
+                          <div class="ctnBtn">
+                            <button type="button" name="button">Modifier</button>
+                            <button type="button" name="button">Supprimer</button>
+                          </div>
+                          <div class="ctnDataUser">
+                            <span>Nom:</span>
+                            teste
+                          </div>
+                          <div class="ctnDataUser">
+                            <span>Prenom:</span>
+                            jean
+                          </div>
+                          <div class="ctnDataUser">
+                            <span>Surnom:</span>
+                            jean
+                          </div>
+                        </div>-->
+                      </div>
+                      <!--<div class="ctnBtnSbtn">
+                          <input type="reset" name="name" value="Vider">
+                          <input type="submit" name="name" value="Enregistrer">
+                      </div>-->
+                  <!--</form>-->
+              </div>
+              <div class="ctnPage ctnType" data-value="profil">
+                  <!--<form class="" action="#" method="post" id="formProfil">-->
+                      <div class="infoSection">
+                        Liste des types
+                      </div>
+                      <div class="ctnListType">
+                        <!--<div class="lineType">
+                          <div class="imgCoverType">
+
+                          </div>
+                          <div class="ctnRightType">
+                            <div class="titreType">Mon type</div>
+                            <div class="ctnBtnType">
+                              <a href="#" class="btnDelType" data-idType="">Supprimers</a>
+                            </div>
+                          </div>
+                        </div>-->
+                      </div>
+                  <!--</form>-->
+              </div>
+              <div class="ctnPage ctnSearch" data-value="profil">
+                  <form class="" action="index.html" method="post" id="formProfil">
+                      <div class="infoSection">
+                        Résultat de la recherche.
+                      </div>
+                      <div class="ctnListSearch">
+
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+
+
+      <!--<div id="container">
+      </div>-->
+        <script type="text/javascript" src="./js/librairie/jquery.js"></script>
+        <script type="text/javascript" src="./js/mainMenu.js"></script>
+
+      <!--<script type="text/javascript" src="./js/librairie/angular.min.js"></script>
+      <script type="text/javascript" src="./js/ng_script.js"></script>-->
+      <script type="text/javascript" src="./js/librairie/pickadate/compressed/picker.js"></script>
+      <script type="text/javascript" src="./js/librairie/pickadate/compressed/picker.date.js"></script>
+      <script type="text/javascript" src="./js/librairie/pickadate/compressed/translations/fr_FR.js"></script>
+      <script type="text/javascript">
+          fs = magnificPopup = null;
+          
+          try {
+              //window.$ = window.jQuery = require('./js/librairie/jquery.js');
+              //require('./js/pikadate/compressed/picker.js');
+                magnificPopup = require('./js/librairie/magnificPopup.js');
+              //require('./js/pikadate/compressed/picker.date.js');
+              //const fs = require('fs');
+          } catch (e) {
+
+          }
+          //});
+      </script>
+      <script type="text/javascript" src="./js/appli.js"></script>
+  </body>
+</html>
