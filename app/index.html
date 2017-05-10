@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr" ng-app="pretox">
+
     <head>
         <meta charset="UTF-8">
-        <title>Manager of loans</title>
+        <title data-i18n="Manager of loans"></title>
         <!--<script type="text/javascript" src="http://localhost:35729/livereload.js"></script>-->
         <link rel="stylesheet" href="./css/style.css" media="screen" title="no title" charset="utf-8">
         <script type="text/javascript" src="./js/librairie/jquery.js"></script>
@@ -13,61 +14,64 @@
         <script src="./js/function.js"></script>
         <link rel="stylesheet" href="">
     </head>
+
     <body>
-      <div class="barTop">
-        <span id="ctnLeftBarTop">
-            <a href="#" id="btnShowMenu"></a>
-            <a href="#" id="title" >kashIkari</a> <!-- onclick="location.reload();" -->
-        </span>
-        <span id="ctnSearchBar">
-          <div>
-            <input type="text" name="name" id="motorSearch" value="">
-            <span></span>
-          </div>
-          <div id="ctnDataSearch">
-                <!--<ul>
-                    <li>test</li>
-                    <li>test</li>
-                    <li>test</li>
-                </ul>-->
-          </div>
-      </span>
-      <span id="ctnBtnRightSearch">
-        <span id="btnAddPret"></span>
-        <span id="btnReload">R</span>
-      </span>
-      <a href="#" id="btnParam">
-        Paramètres
-        <ul id="listOptTop">
-          <li class="lienNoDispo">Profil</li>
-          <li class="lienNoDispo">Sign in</li>
-          <li class="btnShowFn" data-fn="amis">My friends</li>
-          <li class="btnShowFn" data-fn="type">My types</li>
-        </ul>
-      </a>
-      </div>
-      <div class="ctnCorp">
-          <div class="menuLeft">
-              <div class="btnHideMenu">←</div>
-              <div class="btnType" data-idtype="-1">
-                Show all
-              </div>
-              <ul id="ulMenuLeft">
-                  <li><a href="" class="btnType">
-                    <span class="menu_img" style="background-image: url('../dataUser/imgUser/dvd.jpg')"></span>
-                    <span>Menu 1</span></a>
-                  </li>
-              </ul>
-          </div>
-          <div class="corp">
-              <div id="fondOver"></div>
-              <div class="save_line" style="display: none;">
-                <p id="lineNoPretInCat">
-                  Nothing is relied to this category.
-                </p>
-              </div>
-              <div class="ctnPage ctnPret" data-value="index">
-                  <!--<div class="ctnShare">
+        <div class="barTop">
+            <span id="ctnLeftBarTop">
+                <a href="#" id="btnShowMenu"></a>
+                <a href="#" id="title">kashIkari</a> <!-- onclick="location.reload();" -->
+            </span>
+            <span id="ctnSearchBar">
+                <div>
+                    <input type="text" name="name" id="motorSearch" value="" data-i18n="[placeholder]searchEngine" placeholder="Search something...">
+                    <span></span>
+                </div>
+                <div id="ctnDataSearch">
+                    <!--<ul>
+                            <li>test</li>
+                            <li>test</li>
+                            <li>test</li>
+                    </ul>-->
+                </div>
+            </span>
+            <span id="ctnBtnRightSearch">
+                <span id="btnAddPret"></span>
+                <span id="btnReload">R</span>
+            </span>
+            <a href="#" id="btnParam">
+                <span data-i18n="Settings">Settings</span>
+                <ul id="listOptTop">
+                    <li class="lienNoDispo" data-i18n="Profil">Profil</li>
+                    <li class="lienNoDispo" data-i18n="Sign in">Sign in</li>
+                    <li class="btnShowFn" data-fn="amis" data-i18n="My friends">My friends</li>
+                    <li class="btnShowFn" data-fn="type" data-i18n="My types">My types</li>
+                </ul>
+            </a>
+        </div>
+        <div class="ctnCorp">
+
+            <div class="menuLeft">
+                <div class="btnHideMenu">←</div>
+                <div class="btnType" data-idtype="-1" data-i18n="Show all">Show all</div>
+                <ul id="ulMenuLeft">
+                    <li>
+                        <a href="" class="btnType">
+                            <span class="menu_img" style="background-image: url('../dataUser/imgUser/dvd.jpg')"></span>
+                            <span>Menu 1</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="corp">
+                <div id="fondOver"></div>
+                <div class="save_line" style="display: none;">
+                    <p id="lineNoPretInCat" data-i18n="Nothing is relied to this category">Nothing is relied to this category</p>
+                </div>
+
+
+                <div class="ctnPage ctnPret" data-value="index">
+                    <!--<div class="ctnShare">
                       <div class="ctnImgShare">
                           <div>
                               <img src="img/mind_brain_thinking.png" alt="" />
@@ -130,108 +134,112 @@
                           </div>
                       </div>
                   </div>-->
-              </div>
-              <div class="ctnPage ctnGestion" data-value="gestion">
-                  <div class="ctnChoixAdd">
-                      <div class="ctnBtnCatAdd">
-                          <span data-idMenu="1">Loan</span>
-                          <span data-idMenu="2">Friend</span>
-                          <span data-idMenu="3">Type of loan</span>
-                      </div>
-                  </div>
-                  <div class="ctnPartGestion" data-idMenu="1">
-                    <form class="" action="index.html" method="post" id="formPret">
-                        <div class="ctnLineForm" ng-controller="gestionPret">
-                          <div class="ctnChoixPret">
-                            <label for="">* Type of loan</label>
-                            <select class="listPret" name="idType">
+                </div>
+
+
+                <div class="ctnPage ctnGestion" data-value="gestion">
+                    <div class="ctnChoixAdd">
+                        <div class="ctnBtnCatAdd">
+                            <span data-idMenu="1" data-i18n="Loan">Loan</span>
+                            <span data-idMenu="2" data-i18n="Friend">Friend</span>
+                            <span data-idMenu="3" data-i18n="Type of loan">Type of loan</span>
+                        </div>
+                    </div>
+                    <div class="ctnPartGestion" data-idMenu="1">
+                        <form class="" action="index.html" method="post" id="formPret">
+                            <div class="ctnLineForm" ng-controller="gestionPret">
+                                <div class="ctnChoixPret">
+                                    <label for="" data-i18n="Type of loan">* Type of loan</label>
+                                    <select class="listPret" name="idType">
                               <option value="1">test</option>
                               <option value="2">test1</option>
                               <option value="3">test2</option>
                             </select>
-                            <label for="">* Qte</label>
-                            <input type="text" name="qte" class="input_nbr">
-                          </div>
-                          <div class="ctnChoixPret">
-                            <div class="lineSupInfo" style="display: none;">
-                              <label for="">Information</label><input type="text" value=""/>
-                            </div>
-                            <div class="ctnLine">
+                                    <label for="" data-i18n="Qte">* Qte</label>
+                                    <input type="text" name="qte" class="input_nbr">
+                                </div>
+                                <div class="ctnChoixPret">
+                                    <div class="lineSupInfo" style="display: none;">
+                                        <label for="" data-i18n="Information">Information</label><input type="text" value=""
+                                        />
+                                    </div>
+                                    <div class="ctnLine">
 
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-                        </div>
-                        <div class="ctnLineForm">
-                            <label for="">* Ami conserné par le prêt</label>
-                            <select class="listAmis" name="idAmis">
+                            <div class="ctnLineForm">
+                                <label for="" data-i18n="Friend concerned by your loan">* Friend concerned by your loan</label>
+                                <select class="listAmis" name="idAmis">
                               <option value="">-</option>
                             </select>
-                        </div>
-                        <div class="ctnLineForm">
-                            <label for="">Description</label>
-                            <input type="text" id="descri" name="descri" value="">
-                        </div>
-                        <div class="ctnLineForm">
-                            <label for="">Date of get back</label>
-                            <input type="text" readonly id="dateRecu" name="dateRecu" value="">
-                        </div>
-                        <div class="ctnBtnSbtn">
-                            <input type="reset" name="name" value="Vider">
-                            <input type="submit" name="name" value="Enregistrer">
-                        </div>
-                    </form>
-                  </div>
-                  <div class="ctnPartGestion" data-idMenu="2">
-                    <form class="" action="index.html" method="post" id="formAmis">
-                        <div class="ctnLineForm">
-                            <label for="">Name</label>
-                            <input type="text" name="nom" value="">
-                        </div>
-                        <div class="ctnLineForm">
-                            <label for="">Frist name</label>
-                            <input type="text" name="prenom" value="">
-                        </div>
-                        <div class="ctnLineForm">
-                            <label for="">* Nickname</label>
-                            <input type="text" name="surnom" value="">
-                        </div>
-                        <div class="ctnBtnSbtn">
-                            <input type="reset" name="name" value="Vider">
-                            <input type="submit" name="name" value="Enregistrer">
-                        </div>
-                    </form>
-                  </div>
-                  <div class="ctnPartGestion" data-idMenu="3">
-                    <form class="" action="index.html" method="post" id="formType">
-                        <div class="ctnLineForm">
-                            <label for="">* Name</label>
-                            <input type="text" name="nom" id="nomAddTypeNom" value="">
-                        </div>
-                        <div class="ctnLineForm">
-                            <label for="">Picture</label>
-                            <div id="nomAddTypeImg">
-                              <span class="spanHackHeight"> </span>
-                              <span>Move your file here
-                                <div class="ctnAffiNameImg">
-
-                                </div>
-                              </span>
                             </div>
-                        </div>
-                        <div class="ctnBtnSbtn">
-                            <input type="reset" name="name" value="Vider">
-                            <input type="submit" name="name" value="Enregistrer">
-                        </div>
-                    </form>
-                  </div>
-              </div>
+                            <div class="ctnLineForm">
+                                <label for="" data-i18n="Description">Description</label>
+                                <input type="text" id="descri" name="descri" value="">
+                            </div>
+                            <div class="ctnLineForm">
+                                <label for="" data-i18n="Date of get back">Date of get back</label>
+                                <input type="text" readonly id="dateRecu" name="dateRecu" value="">
+                            </div>
+                            <div class="ctnBtnSbtn">
+                                <input type="reset" name="name" value="Clean" data-i18n="[value]input.Clean">
+                                <input type="submit" name="name" value="Save" data-i18n="[value]input.Save">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="ctnPartGestion" data-idMenu="2">
+                        <form class="" action="index.html" method="post" id="formAmis">
+                            <div class="ctnLineForm">
+                                <label for="" data-i18n="informations.Name">Name</label>
+                                <input type="text" name="nom" value="">
+                            </div>
+                            <div class="ctnLineForm">
+                                <label for="" data-i18n="informations.Frist_name">Frist name</label>
+                                <input type="text" name="prenom" value="">
+                            </div>
+                            <div class="ctnLineForm">
+                                <label for="" data-i18n="informations.Nickname">* Nickname</label>
+                                <input type="text" name="surnom" value="">
+                            </div>
+                            <div class="ctnBtnSbtn">
+                                <input type="reset" name="name" value="Clean" data-i18n="[value]input.Clean">
+                                <input type="submit" name="name" value="Save" data-i18n="[value]input.Save">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="ctnPartGestion" data-idMenu="3">
+                        <form class="" action="index.html" method="post" id="formType">
+                            <div class="ctnLineForm">
+                                <label for="" data-i18n="informations.Name">* Name</label>
+                                <input type="text" name="nom" id="nomAddTypeNom" value="">
+                            </div>
+                            <div class="ctnLineForm">
+                                <label for="" data-i18n="Picture">Picture</label>
+                                <div id="nomAddTypeImg">
+                                    <span class="spanHackHeight"> </span>
+                                    <span><span data-i18n="Move your file here">Move your file here</span>
+                                    <div class="ctnAffiNameImg">
 
-              <div class="ctnPage ctnAmis" data-value="profil">
-                  <!--<form class="" action="#" method="post" id="formProfil">-->
-                      <div class="infoSection">
+                                    </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="ctnBtnSbtn">
+                                <input type="reset" name="name" value="Clean" data-i18n="[value]input.Clean">
+                                <input type="submit" name="name" value="Save" data-i18n="[value]input.Save">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div class="ctnPage ctnAmis" data-value="profil">
+                    <!--<form class="" action="#" method="post" id="formProfil">-->
+                    <div class="infoSection" data-i18n="List of friends">
                         List of friends
-                      </div>
-                      <div class="ctnListAmis">
+                    </div>
+                    <div class="ctnListAmis">
                         <!--<div class="blockAmis">
                           <div class="ctnBtn">
                             <button type="button" name="button">Modifier</button>
@@ -250,19 +258,20 @@
                             jean
                           </div>
                         </div>-->
-                      </div>
-                      <!--<div class="ctnBtnSbtn">
+                    </div>
+                    <!--<div class="ctnBtnSbtn">
                           <input type="reset" name="name" value="Vider">
                           <input type="submit" name="name" value="Enregistrer">
                       </div>-->
-                  <!--</form>-->
-              </div>
-              <div class="ctnPage ctnType" data-value="profil">
-                  <!--<form class="" action="#" method="post" id="formProfil">-->
-                      <div class="infoSection">
+                    <!--</form>-->
+                </div>
+
+                <div class="ctnPage ctnType" data-value="profil">
+                    <!--<form class="" action="#" method="post" id="formProfil">-->
+                    <div class="infoSection" data-i18n="List of types">
                         List of types
-                      </div>
-                      <div class="ctnListType">
+                    </div>
+                    <div class="ctnListType">
                         <!--<div class="lineType">
                           <div class="imgCoverType">
 
@@ -274,47 +283,164 @@
                             </div>
                           </div>
                         </div>-->
-                      </div>
-                  <!--</form>-->
-              </div>
-              <div class="ctnPage ctnSearch" data-value="profil">
-                  <form class="" action="index.html" method="post" id="formProfil">
-                      <div class="infoSection">
-                        Result of your search.
-                      </div>
-                      <div class="ctnListSearch">
+                    </div>
+                    <!--</form>-->
+                </div>
 
-                      </div>
-                  </form>
-              </div>
-          </div>
-      </div>
+                <div class="ctnPage ctnSearch" data-value="profil">
+                    <form class="" action="index.html" method="post" id="formProfil">
+                        <div class="infoSection" data-i18n="Result of your search">Result of your search.</div>
+                        <div class="ctnListSearch">
+
+                        </div>
+                    </form>
+                </div>
 
 
-      <!--<div id="container">
-      </div>-->
+                <div class="ctnPage ctnLanguage">
+                    <form class="" action="index.html" method="post" id="formProfil">
+                        <div class="infoSection" data-i18n="choseLanguage.title">Please choose your language</div>
+                        <div class="ctnListLanguage">
+                            <ul>
+                                <li><a href="#"><img src="img/pays/France.png" alt=""><span>French</span></a></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+
+            </div><!-- end Corp -->
+        </div><!-- end ctnCorp -->
+
+        <!--<div id="container"></div>-->
         <script type="text/javascript" src="./js/librairie/jquery.js"></script>
         <script type="text/javascript" src="./js/mainMenu.js"></script>
 
-      <!--<script type="text/javascript" src="./js/librairie/angular.min.js"></script>
-      <script type="text/javascript" src="./js/ng_script.js"></script>-->
-      <script type="text/javascript" src="./js/librairie/pickadate/compressed/picker.js"></script>
-      <script type="text/javascript" src="./js/librairie/pickadate/compressed/picker.date.js"></script>
-      <script type="text/javascript" src="./js/librairie/pickadate/compressed/translations/fr_FR.js"></script>
-      <script type="text/javascript">
-          fs = magnificPopup = null;
-          
-          try {
-              //window.$ = window.jQuery = require('./js/librairie/jquery.js');
-              //require('./js/pikadate/compressed/picker.js');
-                magnificPopup = require('./js/librairie/magnificPopup.js');
-              //require('./js/pikadate/compressed/picker.date.js');
-              //const fs = require('fs');
-          } catch (e) {
+        <!--<script type="text/javascript" src="./js/librairie/angular.min.js"></script>
+        <script type="text/javascript" src="./js/ng_script.js"></script>-->
+        <script type="text/javascript" src="./js/librairie/pickadate/compressed/picker.js"></script>
+        <script type="text/javascript" src="./js/librairie/pickadate/compressed/picker.date.js"></script>
+        <script type="text/javascript" src="./js/librairie/pickadate/compressed/translations/fr_FR.js"></script>
+        <script type="text/javascript">
+            fs = magnificPopup = null;
 
-          }
-          //});
-      </script>
-      <script type="text/javascript" src="./js/appli.js"></script>
-  </body>
+            try {
+                //window.$ = window.jQuery = require('./js/librairie/jquery.js');
+                //require('./js/pikadate/compressed/picker.js');
+                magnificPopup = require('./js/librairie/magnificPopup.js');
+                //require('./js/pikadate/compressed/picker.date.js');
+                //const fs = require('fs');
+            } catch (e) {
+
+            }
+
+
+
+            var i18next = require("i18next");
+            var i18nextJquery = require("jquery-i18next");
+            var i18nextBackend = require('i18next-node-fs-backend');
+            //var i18nextElectron = require('i18next-electron-language-detector'); // app.getLocale()
+            var i18nextJquery = require('jquery-i18next'); // app.getLocale()
+
+
+            i18nextJquery.init(i18next, $, {
+                tName: 't', // --> appends $.t = i18next.t
+                i18nName: 'i18n', // --> appends $.i18n = i18next
+                handleName: 'localize', // --> appends $(selector).localize(opts);
+                selectorAttr: 'data-i18n', // selector for translating elements
+                targetAttr: 'i18n-target', // data-() attribute to grab target element to translate (if diffrent then itself)
+                optionsAttr: 'i18n-options', // data-() attribute that contains options, will load/set if useOptionsAttr = true
+                useOptionsAttr: false, // see optionsAttr
+                parseDefaultValueFromContent: true // parses default values from content ele.val or ele.text
+            });
+
+            //var i18n = i18next.use(i18nextBackend).use(i18nextElectron).init({
+            var i18n = i18next.use(i18nextBackend).init({
+                "debug": true,
+                "initImmediate": true,
+                "ns": [
+                    "translation"
+                ],
+                "defaultNS": [
+                    "translation"
+                ],
+                "fallbackLng": false,
+                "fallbackNS": false,
+                "whitelist": false,
+                "load": "all",
+                "preload": false,
+                "keySeparator": '.',
+                "nsSeparator": false,
+                "pluralSeparator": "_",
+                "contextSeparator": "_",
+                "saveMissing": false,
+                "saveMissingTo": "fallback",
+                "missingKeyHandler": false,
+                "postProcess": false,
+                "returnNull": true,
+                "returnEmptyString": true,
+                "returnObjects": false,
+                "joinArrays": false,
+                "parseMissingKeyHandler": false,
+                "appendNamespaceToMissingKey": false,
+                "interpolation": {
+                    "escapeValue": true,
+                    "prefix": "{{",
+                    "suffix": "}}",
+                    "unescapePrefix": "-",
+                    "nestingPrefix": "$t(",
+                    "nestingSuffix": ")"
+                },
+                //"lng": "en",
+                "languages": {
+                    "en": {
+                        "flag": "United_States_of_America.png",
+                        "fullNameEn": "English"
+                    },
+                    "fr":  {
+                        "flag": "France.png",
+                        "fullNameEn": "French"
+                    }
+                },
+                "backend": {
+                    "loadPath": __dirname + "/i18n/{{lng}}.json",
+                    "addPath": __dirname + "/i18n/{{{lng}}/"
+                }
+            }, (err, t) => {
+                // initialized and ready to go!
+                $("body *").localize();
+            });
+
+            
+           // console.warn(i18next.t("French"));
+
+            //console.log(i18n);
+
+            // load modules
+            /*
+                        var express = require('express'),
+                            i18n = require("i18n");
+
+                        i18n.configure({
+                            locales:['en', 'fr'],
+                            directory: __dirname + '/locales',
+                            defaultLocale: 'en',
+                            queryParameter: 'lang'
+                        });
+
+
+                        i18n.setLocale('fr');
+
+                        console.log(i18n.__('Hello'));
+                        console.log(i18n.__('how it\'s going today ?'));
+            */
+
+
+
+            // i18n.init();
+
+            //});
+        </script>
+        <script type="text/javascript" src="./js/appli.js"></script>
+    </body>
+
 </html>

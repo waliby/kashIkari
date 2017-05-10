@@ -1,4 +1,8 @@
 {
+  "setting": {
+    "defaultLng": "en",
+    "defautTitle": "kashIkari"
+  },
   "type": {
     "primaryKey": 4,
     "value": [
