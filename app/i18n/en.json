@@ -1,0 +1,38 @@
+{
+  "Date of get back": "Date of get back",
+  "Description": "Description",
+  "English": "English",
+  "French": "French",
+  "Friend": "Friend",
+  "Friend concerned by your loan": "Friend concerned by your loan",
+  "Information": "Information",
+  "List of friends": "List of friends",
+  "List of types": "List of types",
+  "Loan": "Loan",
+  "Manager of loans": "Manager of loans",
+  "Move your file here": "Move your file here",
+  "My friends": "My friends",
+  "My types": "My types",
+  "Nothing is relied to this category": "Nothing is relied to this category",
+  "Picture": "Picture",
+  "Profil": "Profil",
+  "Qte": "Qte",
+  "Result of your search": "Result of your search",
+  "Settings": "Settings",
+  "Show all": "Show all",
+  "Sign in": "Sign in",
+  "Type of loan": "Type of loan",
+  "choseLanguage": {
+    "title": "Please, choose your language"
+  },
+  "informations": {
+    "Name": "Name",
+    "Frist_name": "Frist name",
+    "Nickname": "Nickname"
+  },
+  "input": {
+    "Clean": "Clean",
+    "Save": "Save"
+  },
+  "searchEngine": "Search something..."
+}
