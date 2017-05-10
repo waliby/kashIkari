@@ -13,9 +13,9 @@ try {
 	dialog = remote.dialog;
 	// app = remote.require('app');
 	// dialog = remote.require('dialog');
-	ncp = require('ncp');
+	// ncp = require('ncp');
 	path = require('path');
-	fs = require('fs');
+	fs = require('fs-extra')
 	//require('./function.js');§
 
 	//BrowserWindow = remote.require('app');
@@ -79,7 +79,7 @@ if (fs) {
 		// Si une erreur survient ou si ce n'est pas un dossier, on on entame le processus de creation.
 		if (err || !stats.isDirectory()) {
 			// Copie du conteue du répertoire fileZero dans dataUser
-			ncp(pathFileZero, pathAppUser, function (errDir) {
+			fs.copy(pathFileZero, pathAppUser, function (errDir) {
 				if (errDir) {
 					return console.error(errDir);
 				} else {
@@ -726,7 +726,7 @@ var app = {
 		// Copie de l'image
 		console.warn(pathImg);
 		console.warn(pathAppUserImg + newImgPath);
-		ncp(pathImg, pathAppUserImg + newImgPath, function (err) {
+		fs.copy(pathImg, pathAppUserImg + newImgPath, function (err) {
 			if (err) {
 				return console.error(err);
 			} else {
