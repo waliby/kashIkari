@@ -1,0 +1,38 @@
+{
+  "Date of get back": "Date de retour",
+  "Description": "Description",
+  "English": "Englais",
+  "French": "Français",
+  "Friend": "Amis",
+  "Friend concerned by your loan": "Amis concerner par votre prêt",
+  "Information": "Information",
+  "List of friends": "Liste d'amis",
+  "List of types": "Liste de types",
+  "Loan": "Prêt",
+  "Manager of loans": "Gestionnaire de prêt",
+  "Move your file here": "Déplacer votre fichier ici",
+  "My friends": "Mes amis",
+  "My types": "Mes types",
+  "Nothing is relied to this category": "Aucun contenu relier à cette catégorie.",
+  "Picture": "Images",
+  "Profil": "Profil",
+  "Qte": "Qte",
+  "Result of your search": "Résultat de recherche",
+  "Settings": "Paramètre",
+  "Show all": "Tous afficher",
+  "Sign in": "Connexion",
+  "Type of loan": "Type de prêt",
+  "choseLanguage": {
+    "title": "Veuillez choisir votre langage"
+  },
+  "informations": {
+    "Name": "Nom",
+    "Frist_name": "Prenom",
+    "Nickname": "Surnom"
+  },
+  "input": {
+    "Clean": "Vider",
+    "Save": "Sauvegarder"
+  },
+  "searchEngine": "Chercher quelque chose..."
+}
