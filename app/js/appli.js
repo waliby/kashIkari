@@ -13,9 +13,9 @@ try {
 	dialog = remote.dialog;
 	// app = remote.require('app');
 	// dialog = remote.require('dialog');
-	ncp = require('ncp');
+	// ncp = require('ncp');
 	path = require('path');
-	fs = require('fs');
+	fs = require('fs-extra')
 	//require('./function.js');§
 
 	//BrowserWindow = remote.require('app');
@@ -79,7 +79,7 @@ if (fs) {
 		// Si une erreur survient ou si ce n'est pas un dossier, on on entame le processus de creation.
 		if (err || !stats.isDirectory()) {
 			// Copie du conteue du répertoire fileZero dans dataUser
-			ncp(pathFileZero, pathAppUser, function (errDir) {
+			fs.copy(pathFileZero, pathAppUser, function (errDir) {
 				if (errDir) {
 					return console.error(errDir);
 				} else {
@@ -726,7 +726,7 @@ var app = {
 		// Copie de l'image
 		console.warn(pathImg);
 		console.warn(pathAppUserImg + newImgPath);
-		ncp(pathImg, pathAppUserImg + newImgPath, function (err) {
+		fs.copy(pathImg, pathAppUserImg + newImgPath, function (err) {
 			if (err) {
 				return console.error(err);
 			} else {
@@ -1075,37 +1075,14 @@ $btnPlus.on("click", function () {
 
 
 
-var $btnAddPret = $("#btnAddPret"),
-	$ctnPret = $(".ctnPret"),
-	$ctnGestion = $(".ctnGestion"),
-	isGestionOpen = false,
-	vitesse = 400;
+var vitesse = 400;
 
-$(".btnType").eq(0).toggleClass("focusedType");
+//$(".btnType").eq(0).toggleClass("focusedType");
 
-$btnAddPret.on("click", function () {
-	//alert("ok");
-	//fs.appendFile('message.txt', 'data to append\n', 'utf8');
-	$(this).toggleClass("btnAddPretEffet");
-
-	if (isGestionOpen) {
-		$ctnPret.fadeIn(vitesse);
-		$ctnGestion.fadeOut(vitesse);
-	} else {
-		// Très important: pour un effet réussit, il faut que ctnPret (qui est l'élément du dessus)
-		// disparaisse directement pour que la scroll focus le ctnGestion puis a ce moment la il
-		// faut activer l'effet en douceur pour le rendre visible.
-		// Suppression des signes d'ouverture de la fenetre de gestion
-		hideFn();
-
-		$ctnGestion.fadeIn(vitesse);
-	}
-	isGestionOpen = !isGestionOpen;
-
+$("#btnAddPret").on("click", function () {
+	$(this).addClass("btnAddPretEffet");
 	event.preventDefault();
 });
-
-
 
 
 var $formType = $("#formType"),
@@ -1248,10 +1225,19 @@ listPret.on("change", function (event) {
 // Fait disparaitre le contenu actuellement affiché et affiche le
 // block contenant les amis.
 var $ctnAmis = $(".ctnAmis"),
-	$ctnType = $(".ctnType"),
-	isFnAmisOpen = false,
-	isFnTypeOpen = false;
+	$ctnType = $(".ctnType");
+	//isFnAmisOpen = false,
+	//isFnTypeOpen = false;
 
+var $currentFnOpen = null;
+
+// catch the current open window,
+$(".ctnPage").each((index, element) => {
+	if($(element).css("display") == "block")
+		$currentFnOpen = $(element);
+});
+
+/*
 $(".btnShowFn").on("click", function (event) {
 	var nomFn = $(this).attr("data-fn");
 
@@ -1291,32 +1277,39 @@ $(".btnShowFn").on("click", function (event) {
 	}
 
 	event.preventDefault();
+});*/
+
+
+// Event for change of window
+$(".btnShowFn").on("click", function (event) {
+	let nomFn = $(this).attr("data-fn"),
+		$newFn = $(".ctnPage[data-value='"+nomFn+"']");
+
+	if(!$currentFnOpen.is($newFn)){
+		// Actualyse view of loan cause maybe the user had just add some new in the gestion page.
+		if(nomFn == "index")
+			actuList(TYPE_PRET, -1);
+
+		if(nomFn != "gestion")
+			$("#btnAddPret").removeClass("btnAddPretEffet");
+
+
+		$($newFn).fadeIn(vitesse);
+		// Have to disapear faster than newFn appear
+		$($currentFnOpen).fadeOut(0);
+
+		$currentFnOpen = $newFn;
+	}else
+		console.log("This fn is already open.");
+
+	event.preventDefault();
 });
+
 
 var isModUpdateOpen = false,
 	currentElemOpen = null;
 
 var $ctnPret = $(".ctnPret");
-
-$("#title").on("click", function (event) {
-
-	try {
-		// Suppression des signes d'ouverture de la fenetre de gestion
-		$("#btnAddPret").removeClass("btnAddPretEffet");
-		isGestionOpen = isFnTypeOpen = isFnAmisOpen = false;
-
-		// Permet d'afficher tous les prets (evite d'ouvrir le menu pour changer de liens)
-		actuList(TYPE_PRET, -1);
-
-		hideFn();
-
-		$ctnPret.fadeIn(vitesse);
-	} catch (e) {
-		location.reload();
-	} finally {
-		event.preventDefault();
-	}
-});
 
 function eventMenuLeft() {
 
@@ -1331,10 +1324,8 @@ function eventMenuLeft() {
 		}
 
 		// Si une fenetre autre que celle des pret est ouverte, on la ferme et on ouvre la fn de pret
-		if (isGestionOpen || isFnAmisOpen || isFnTypeOpen || isFnSearchOpen) {
-			console.log(isFnSearchOpen);
+		if ($currentFnOpen.attr("data-value") != "index") {
 			hideFn();
-			isFnSearchOpen = false;
 			$ctnPret.fadeIn(vitesse);
 		}
 
@@ -1627,17 +1618,8 @@ function addEventImgDragDrop(classCtnImg) {
 
 function hideFn() {
 	// Remise a 0 des variables utlisé par la fenetre
-	sModUpdateOpen = false,
-		currentElemOpen = null;
-
-	/*if(isGestionOpen)
-	    isGestionOpen = false;
-	if(isFnAmisOpen)
-	    isFnAmisOpen = false;
-	if(isFnTypeOpen)
-	    isFnTypeOpen = false;
-	if(isFnSearchOpen)
-	    isFnSearchOpen = false;*/
+	isModUpdateOpen = false,
+	currentElemOpen = null;
 
 	// Cachement de la fenetres ouvertes
 	$(".ctnPage").each(function (index, element) {
@@ -1652,8 +1634,7 @@ function hideFn() {
 */
 
 var ctnDataSearch = $("#ctnDataSearch"),
-	motorSearch = $("#motorSearch"),
-	isFnSearchOpen = false;
+	motorSearch = $("#motorSearch");
 
 // var obj = file.getJson(pathFileOffline);
 
@@ -1729,7 +1710,6 @@ motorSearch.on("keyup click", function (event) {
 					}
 				}
 				ctnDataSearch.fadeIn(100);
-				isFnSearchOpen = true;
 			}
 		}
 	});
@@ -1744,9 +1724,6 @@ function eventClickSearch(btn) {
 	// Ajout de l'élément selectionner
 	// Ajout des evenements sur l'element ajouté.
 	actuList(currtype, "id", currId, true);
-
-	// permet d'affiver les type sur la page de type si on était déja dessus et quond est partie sur la page de recherche.
-	isFnAmisOpen = isFnTypeOpen = false;
 
 	hideFn();
 	$ctnSearch.fadeIn(vitesse);
@@ -1823,7 +1800,7 @@ $(".ctnListLanguage > ul").on("click", "li > a", function(){
 });
 
 
-hideFn();
-$ctnLanguage.fadeIn(vitesse);
+//hideFn();
+//$ctnLanguage.fadeIn(vitesse);
 
 
