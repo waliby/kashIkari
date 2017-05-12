@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="./css/style.css" media="screen" title="no title" charset="utf-8">
         <script type="text/javascript" src="./js/librairie/jquery.js"></script>
         <link rel="stylesheet" href="./css/popup.css" charset="utf-8">
+        <link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css" charset="utf-8">
         <link rel="stylesheet" href="./js/librairie/pickadate/themes/classic.css" charset="utf-8">
         <link rel="stylesheet" href="./js/librairie/pickadate/compressed/themes/classic.date.css" charset="utf-8">
         <!--<script src="./js/librairie/magnificPopup.js"></script>-->
@@ -19,7 +20,7 @@
         <div class="barTop">
             <span id="ctnLeftBarTop">
                 <a href="#" id="btnShowMenu"></a>
-                <a href="#" id="title">kashIkari</a> <!-- onclick="location.reload();" -->
+                <a href="#" id="title" class="btnShowFn" data-fn="index">kashIkari</a> <!-- onclick="location.reload();" -->
             </span>
             <span id="ctnSearchBar">
                 <div>
@@ -35,16 +36,17 @@
                 </div>
             </span>
             <span id="ctnBtnRightSearch">
-                <span id="btnAddPret"></span>
+                <span id="btnAddPret" class="btnShowFn" data-fn="gestion"></span>
                 <span id="btnReload">R</span>
             </span>
             <a href="#" id="btnParam">
-                <span data-i18n="Settings">Settings</span>
+                <span><i class="fa fa-cog" aria-hidden="true"></i></span>
                 <ul id="listOptTop">
                     <li class="lienNoDispo" data-i18n="Profil">Profil</li>
                     <li class="lienNoDispo" data-i18n="Sign in">Sign in</li>
-                    <li class="btnShowFn" data-fn="amis" data-i18n="My friends">My friends</li>
-                    <li class="btnShowFn" data-fn="type" data-i18n="My types">My types</li>
+                    <li class="btnShowFn" data-fn="friends" data-i18n="My friends">My friends</li>
+                    <li class="btnShowFn" data-fn="profils" data-i18n="My types">My types</li>
+                    <li class="btnShowFn" data-fn="settings" data-i18n="Settings">Settings</li>
                 </ul>
             </a>
         </div>
@@ -52,7 +54,7 @@
 
             <div class="menuLeft">
                 <div class="btnHideMenu">←</div>
-                <div class="btnType" data-idtype="-1" data-i18n="Show all">Show all</div>
+                <div class="btnType btnShowFn" data-fn="index" data-idtype="-1" data-i18n="Show all">Show all</div>
                 <ul id="ulMenuLeft">
                     <li>
                         <a href="" class="btnType">
@@ -234,7 +236,7 @@
                 </div>
 
 
-                <div class="ctnPage ctnAmis" data-value="profil">
+                <div class="ctnPage ctnAmis" data-value="friends">
                     <!--<form class="" action="#" method="post" id="formProfil">-->
                     <div class="infoSection" data-i18n="List of friends">
                         List of friends
@@ -266,7 +268,7 @@
                     <!--</form>-->
                 </div>
 
-                <div class="ctnPage ctnType" data-value="profil">
+                <div class="ctnPage ctnType" data-value="profils">
                     <!--<form class="" action="#" method="post" id="formProfil">-->
                     <div class="infoSection" data-i18n="List of types">
                         List of types
@@ -297,7 +299,7 @@
                 </div>
 
 
-                <div class="ctnPage ctnLanguage">
+                <div class="ctnPage ctnLanguage" data-value="settings">
                     <form class="" action="index.html" method="post" id="formProfil">
                         <div class="infoSection" data-i18n="choseLanguage.title">Please choose your language</div>
                         <div class="ctnListLanguage">

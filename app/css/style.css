@@ -413,6 +413,12 @@ input, a, img, button, textarea {
   padding-left: 20px;
   padding-right: 20px;
 }
+.barTop > #btnParam:hover {
+  background-color: #356ec2;
+}
+.barTop > #btnParam > span {
+  font-size: 30px;
+}
 .barTop > #btnParam #listOptTop {
   display: none;
   position: absolute;
@@ -1066,7 +1072,7 @@ div.blockAmis > div.ctnDataUser span input {
   background-color: #58b836 !important;
 }
 
-.ctnType, .ctnSearch {
+.ctnType, .ctnSearch, .ctnLanguage {
   display: none;
 }
 
