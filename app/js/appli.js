@@ -149,7 +149,6 @@ function actuList(typeData, propriId, idLiaison, isActuSearch) {
 	              Principallement utilisé pour les pret, affiché que ceux lier a un type
 	*/
 	//return false;
-	console.log("event");
 	fs.readFile(pathFileOffline, function (err, data) {
 		if (err)
 			return false;
@@ -769,7 +768,7 @@ var app = {
 	"getSetting": (typeData) => {
 		var obj = file.getJson(pathFileOffline),
 			setting = obj[typeData];
-		console.log(obj);
+
 		return setting;
 	},
 	"setSetting": (typeData, objPropVal) => {
